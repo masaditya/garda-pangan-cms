@@ -12,12 +12,38 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "heroTitle": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "heroSubtitle": {
+      "type": "text"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "historyTitle": {
+      "type": "string"
+    },
+    "historyContent": {
+      "type": "richtext"
+    },
+    "historyImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "visionContent": {
+      "type": "richtext"
+    },
+    "missionContent": {
+      "type": "richtext"
+    },
+    "legalityContent": {
+      "type": "richtext"
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "event-pages",
+  "info": {
+    "singularName": "event-page",
+    "pluralName": "event-pages",
+    "displayName": "Event Page",
+    "description": "Hero section for the Our Events page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}

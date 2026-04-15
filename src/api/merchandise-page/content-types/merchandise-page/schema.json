@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchandise-pages",
+  "info": {
+    "singularName": "merchandise-page",
+    "pluralName": "merchandise-pages",
+    "displayName": "Merchandise Page",
+    "description": "Header text and image for the Merchandise page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}

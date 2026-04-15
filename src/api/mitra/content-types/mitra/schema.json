@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "mitras",
+  "info": {
+    "singularName": "mitra",
+    "pluralName": "mitras",
+    "displayName": "Mitra",
+    "description": "Mitra (Partnership) Page Layout"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroBackgroundMedia": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "heroVideoUrl": {
+      "type": "string"
+    },
+    "heroInfoCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.info-card"
+    },
+    "flowTitle": {
+      "type": "string"
+    },
+    "flowDescription": {
+      "type": "text"
+    },
+    "flowSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.flow-step"
+    },
+    "partnerSectionTitle": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_store_links",
+  "info": {
+    "displayName": "Store Link",
+    "description": "E-commerce platform link (e.g. Tokopedia, Shopee)"
+  },
+  "options": {},
+  "attributes": {
+    "platformName": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

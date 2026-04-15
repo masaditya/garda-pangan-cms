@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchandise_categories",
+  "info": {
+    "singularName": "merchandise-category",
+    "pluralName": "merchandise-categories",
+    "displayName": "Merchandise Category",
+    "description": "Categories for filtering Merchandise (Kaos, Pupuk, dll)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "merchandises": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchandise.merchandise",
+      "mappedBy": "category"
+    }
+  }
+}

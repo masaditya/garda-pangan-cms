@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instagram_feeds",
+  "info": {
+    "singularName": "instagram-feed",
+    "pluralName": "instagram-feeds",
+    "displayName": "Instagram Feed",
+    "description": "Our Instagram section manual feed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "postLink": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

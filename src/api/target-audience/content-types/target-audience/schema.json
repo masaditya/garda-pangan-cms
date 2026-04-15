@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "target_audiences",
+  "info": {
+    "singularName": "target-audience",
+    "pluralName": "target-audiences",
+    "displayName": "Target Audience",
+    "description": "Target Donatur dan Penerima untuk About Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Donatur",
+        "Penerima"
+      ]
+    }
+  }
+}

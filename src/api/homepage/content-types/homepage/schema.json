@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": "Homepage content including hero and impact"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroSubtitle": {
+      "type": "string"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "heroCtaText": {
+      "type": "string"
+    },
+    "heroCtaLink": {
+      "type": "string"
+    },
+    "impactTitle": {
+      "type": "string"
+    },
+    "statsPortionsRescued": {
+      "type": "biginteger"
+    },
+    "statsCo2Reduced": {
+      "type": "biginteger"
+    },
+    "statsFoodLossPotential": {
+      "type": "biginteger"
+    },
+    "statsFoodScrap": {
+      "type": "biginteger"
+    }
+  }
+}

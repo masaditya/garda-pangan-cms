@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "penerima-pages",
+  "info": {
+    "singularName": "penerima-page",
+    "pluralName": "penerima-pages",
+    "displayName": "Penerima Page",
+    "description": "Header section for the Penerima Bantuan page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "testimonialButtonLabel": {
+      "type": "string"
+    },
+    "testimonialButtonLink": {
+      "type": "string"
+    }
+  }
+}

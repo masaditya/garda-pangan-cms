@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_info_cards",
+  "info": {
+    "displayName": "Info Card",
+    "description": "Small text card for hero section"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

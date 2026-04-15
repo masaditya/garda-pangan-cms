@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "facts",
+  "info": {
+    "singularName": "fact",
+    "pluralName": "facts",
+    "displayName": "Fact",
+    "description": "Tahukah Kamu section facts"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

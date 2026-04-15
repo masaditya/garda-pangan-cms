@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_flow_steps",
+  "info": {
+    "displayName": "Flow Step",
+    "description": "Step in a process flow"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "button1Label": {
+      "type": "string"
+    },
+    "button1Link": {
+      "type": "string"
+    },
+    "button2Label": {
+      "type": "string"
+    },
+    "button2Link": {
+      "type": "string"
+    }
+  }
+}

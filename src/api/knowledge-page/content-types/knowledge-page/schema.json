@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "knowledge-pages",
+  "info": {
+    "singularName": "knowledge-page",
+    "pluralName": "knowledge-pages",
+    "displayName": "Knowledge Page",
+    "description": "Hero section for the Knowledge & Insights page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
