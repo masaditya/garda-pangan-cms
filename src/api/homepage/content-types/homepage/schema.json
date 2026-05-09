@@ -70,14 +70,31 @@
       "component": "homepage.agent-card",
       "repeatable": true
     },
-    "awardsSection": {
+    "awardTitle": {
+      "type": "string"
+    },
+    "awardCards": {
       "type": "component",
       "component": "homepage.awards-section",
       "repeatable": true
     },
-    "instagramSection": {
+    "instagramTitle": {
+      "type": "string"
+    },
+    "instagramCards": {
       "type": "component",
       "component": "homepage.instagram-section",
+      "repeatable": true
+    },
+    "supporterTitle": {
+      "type": "string"
+    },
+    "supporterSubtitle": {
+      "type": "string"
+    },
+    "supporterCards": {
+      "type": "component",
+      "component": "homepage.supporter-and-collabolators",
       "repeatable": true
     }
   }

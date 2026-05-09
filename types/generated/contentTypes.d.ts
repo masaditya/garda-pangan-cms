@@ -740,7 +740,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     agenPerubahanCards: Schema.Attribute.Component<'homepage.agent-card', true>;
     agenPerubahanSubtitle: Schema.Attribute.String;
     agenPerubahanTitle: Schema.Attribute.String;
-    awardsSection: Schema.Attribute.Component<'homepage.awards-section', true>;
+    awardCards: Schema.Attribute.Component<'homepage.awards-section', true>;
+    awardTitle: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -754,10 +755,11 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     impactImage: Schema.Attribute.Media<'images'>;
     impactStats: Schema.Attribute.Component<'homepage.impact-stat', true>;
     impactTitle: Schema.Attribute.String;
-    instagramSection: Schema.Attribute.Component<
+    instagramCards: Schema.Attribute.Component<
       'homepage.instagram-section',
       true
     >;
+    instagramTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -765,6 +767,12 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    supporterCards: Schema.Attribute.Component<
+      'homepage.supporter-and-collabolators',
+      true
+    >;
+    supporterSubtitle: Schema.Attribute.String;
+    supporterTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
