@@ -1,5 +1,79 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface HomepageAgentCard extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_agent_cards';
+  info: {
+    description: 'Cards for Agen Perubahan section';
+    displayName: 'Agent Card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HomepageAwardsSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_awards_sections';
+  info: {
+    description: 'Section for awards and recognition logos';
+    displayName: 'Awards Section';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomepageDidYouKnow extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_did_you_knows';
+  info: {
+    description: 'Carousel text for did you know section';
+    displayName: 'Did You Know';
+  };
+  attributes: {
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface HomepageFeaturedBy extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_featured_bies';
+  info: {
+    description: 'Marquee section for sponsor logos';
+    displayName: 'Featured By';
+  };
+  attributes: {
+    logos: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomepageImpactStat extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_impact_stats';
+  info: {
+    description: 'Statistics for impact section with icon/image';
+    displayName: 'Impact Stat';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HomepageInstagramSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_instagram_sections';
+  info: {
+    description: 'Instagram section details';
+    displayName: 'Instagram Section';
+  };
+  attributes: {
+    instagramHandle: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedFlowStep extends Struct.ComponentSchema {
   collectionName: 'components_shared_flow_steps';
   info: {
@@ -118,6 +192,12 @@ export interface SharedStoreLink extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'homepage.agent-card': HomepageAgentCard;
+      'homepage.awards-section': HomepageAwardsSection;
+      'homepage.did-you-know': HomepageDidYouKnow;
+      'homepage.featured-by': HomepageFeaturedBy;
+      'homepage.impact-stat': HomepageImpactStat;
+      'homepage.instagram-section': HomepageInstagramSection;
       'shared.flow-step': SharedFlowStep;
       'shared.info-card': SharedInfoCard;
       'shared.media': SharedMedia;

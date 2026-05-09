@@ -23,14 +23,50 @@ export default {
     const singleTypes = {
       'api::homepage.homepage': {
         heroTitle: "ONE STOP FOOD LOSS & WASTE SOLUTION",
-        heroSubtitle: "Garda Pangan adalah food rescue...",
+        heroSubtitle: "Garda Pangan adalah food rescue organization yang berfokus pada isu food loss and waste.",
         heroCtaText: "Pelajari Selengkapnya",
         heroCtaLink: "/about",
+        didYouKnow: [
+          { content: "Did you know that 1/3 of all food produced for human consumption is lost or wasted globally?" },
+          { content: "Food waste contributes to approximately 8-10% of total global greenhouse gas emissions." },
+          { content: "Indonesia is the second largest food waster in the world after Saudi Arabia." }
+        ],
         impactTitle: "Our Impact",
-        statsPortionsRescued: "608311",
-        statsCo2Reduced: "788500",
-        statsFoodLossPotential: "143",
-        statsFoodScrap: "272"
+        impactStats: [
+          { label: "Porsi Makanan Terselamatkan", value: "608.311+" },
+          { label: "Potensi Gas CO2 Berkurang", value: "788.500 kg" },
+          { label: "Potensi Kerugian Ekonomi Terselamatkan", value: "14.3 Miliar" },
+          { label: "Sisa Makanan Terolah", value: "272 Ton" }
+        ],
+        featuredBy: {
+          title: "Supporters & Collaborators",
+          logos: []
+        },
+        agenPerubahanTitle: "Menjadi Agen Perubahan",
+        agenPerubahanSubtitle: "Mari berkontribusi nyata dalam mengatasi masalah food waste di Indonesia",
+        agenPerubahanCards: [
+          { 
+            title: "Donasi Makanan", 
+            description: "Salurkan kelebihan makanan layak konsumsi Anda untuk mereka yang membutuhkan melalui sistem food rescue kami." 
+          },
+          { 
+            title: "Menjadi Relawan", 
+            description: "Bergabunglah sebagai food heroes dan bantu kami mendistribusikan makanan ke titik-titik penerima." 
+          },
+          { 
+            title: "Donasi Dana", 
+            description: "Dukung operasional kami untuk menjangkau lebih banyak orang dan menyelamatkan lebih banyak makanan." 
+          }
+        ],
+        awardsSection: {
+          title: "Awards & Recognition",
+          images: []
+        },
+        instagramSection: {
+          title: "Follow Our Journey",
+          subtitle: "Dapatkan update terbaru kegiatan kami di Instagram",
+          instagramHandle: "@gardapangan"
+        }
       },
       'api::about.about': {
         heroTitle: "Tentang Kami",
@@ -82,9 +118,18 @@ export default {
     for (const [uid, data] of Object.entries(singleTypes)) {
       try {
         const existing = await strapi.entityService.findMany(uid);
-        if (!existing) {
+        
+        // Strapi v4 findMany on singleType returns the object, or null if it doesn't exist
+        // If it's an array (sometimes happens in some configurations), we check length
+        const isExisting = Array.isArray(existing) ? existing.length > 0 : !!existing;
+
+        if (!isExisting) {
           await strapi.entityService.create(uid, { data });
           console.log(`✅ Seeded SingleType: ${uid}`);
+        } else {
+          const id = Array.isArray(existing) ? existing[0].id : existing.id;
+          await strapi.entityService.update(uid, id, { data });
+          console.log(`🔄 Updated SingleType: ${uid}`);
         }
       } catch (e) {
         console.error(`❌ Failed to seed SingleType ${uid}:`, e.message);

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_homepage_featured_bies",
+  "info": {
+    "displayName": "Featured By",
+    "description": "Marquee section for sponsor logos"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

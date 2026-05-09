@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_homepage_awards_sections",
+  "info": {
+    "displayName": "Awards Section",
+    "description": "Section for awards and recognition logos"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_homepage_agent_cards",
+  "info": {
+    "displayName": "Agent Card",
+    "description": "Cards for Agen Perubahan section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

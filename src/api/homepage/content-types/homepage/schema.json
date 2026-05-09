@@ -5,7 +5,7 @@
     "singularName": "homepage",
     "pluralName": "homepages",
     "displayName": "Homepage",
-    "description": "Homepage content including hero and impact"
+    "description": "Comprehensive homepage content matching design"
   },
   "options": {
     "draftAndPublish": false
@@ -33,20 +33,52 @@
     "heroCtaLink": {
       "type": "string"
     },
+    "didYouKnow": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.did-you-know"
+    },
     "impactTitle": {
       "type": "string"
     },
-    "statsPortionsRescued": {
-      "type": "biginteger"
+    "impactImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "statsCo2Reduced": {
-      "type": "biginteger"
+    "impactStats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.impact-stat"
     },
-    "statsFoodLossPotential": {
-      "type": "biginteger"
+    "featuredBy": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.featured-by"
     },
-    "statsFoodScrap": {
-      "type": "biginteger"
+    "agenPerubahanTitle": {
+      "type": "string"
+    },
+    "agenPerubahanSubtitle": {
+      "type": "string"
+    },
+    "agenPerubahanCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.agent-card"
+    },
+    "awardsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.awards-section"
+    },
+    "instagramSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.instagram-section"
     }
   }
 }

@@ -728,7 +728,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
-    description: 'Homepage content including hero and impact';
+    description: 'Comprehensive homepage content matching design';
     displayName: 'Homepage';
     pluralName: 'homepages';
     singularName: 'homepage';
@@ -737,15 +737,27 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    agenPerubahanCards: Schema.Attribute.Component<'homepage.agent-card', true>;
+    agenPerubahanSubtitle: Schema.Attribute.String;
+    agenPerubahanTitle: Schema.Attribute.String;
+    awardsSection: Schema.Attribute.Component<'homepage.awards-section', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    didYouKnow: Schema.Attribute.Component<'homepage.did-you-know', true>;
+    featuredBy: Schema.Attribute.Component<'homepage.featured-by', false>;
     heroBackground: Schema.Attribute.Media<'images' | 'videos'>;
     heroCtaLink: Schema.Attribute.String;
     heroCtaText: Schema.Attribute.String;
     heroSubtitle: Schema.Attribute.String;
     heroTitle: Schema.Attribute.String;
+    impactImage: Schema.Attribute.Media<'images'>;
+    impactStats: Schema.Attribute.Component<'homepage.impact-stat', true>;
     impactTitle: Schema.Attribute.String;
+    instagramSection: Schema.Attribute.Component<
+      'homepage.instagram-section',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -753,10 +765,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    statsCo2Reduced: Schema.Attribute.BigInteger;
-    statsFoodLossPotential: Schema.Attribute.BigInteger;
-    statsFoodScrap: Schema.Attribute.BigInteger;
-    statsPortionsRescued: Schema.Attribute.BigInteger;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

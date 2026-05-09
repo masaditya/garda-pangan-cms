@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_homepage_did_you_knows",
+  "info": {
+    "displayName": "Did You Know",
+    "description": "Carousel text for did you know section"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

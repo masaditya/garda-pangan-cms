@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_homepage_instagram_sections",
+  "info": {
+    "displayName": "Instagram Section",
+    "description": "Instagram section details"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "instagramHandle": {
+      "type": "string"
+    }
+  }
+}
