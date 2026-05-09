@@ -740,7 +740,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     agenPerubahanCards: Schema.Attribute.Component<'homepage.agent-card', true>;
     agenPerubahanSubtitle: Schema.Attribute.String;
     agenPerubahanTitle: Schema.Attribute.String;
-    awardsSection: Schema.Attribute.Component<'homepage.awards-section', false>;
+    awardsSection: Schema.Attribute.Component<'homepage.awards-section', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -756,7 +756,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     impactTitle: Schema.Attribute.String;
     instagramSection: Schema.Attribute.Component<
       'homepage.instagram-section',
-      false
+      true
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
