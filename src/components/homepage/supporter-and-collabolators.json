@@ -1,18 +1,11 @@
 {
-  "collectionName": "components_homepage_instagram_sections",
+  "collectionName": "components_homepage_supporter_and_collabolators",
   "info": {
-    "displayName": "Instagram Section",
-    "description": "Instagram section details"
+    "displayName": "Supporter and Collabolators"
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "subtitle": {
-      "type": "string"
-    },
-    "instagramHandle": {
       "type": "string"
     },
     "image": {
@@ -25,5 +18,6 @@
         "audios"
       ]
     }
-  }
+  },
+  "config": {}
 }

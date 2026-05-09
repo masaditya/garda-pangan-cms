@@ -16,6 +16,19 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "year": {
+      "type": "string"
+    },
+    "awardByLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

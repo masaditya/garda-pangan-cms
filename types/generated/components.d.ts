@@ -20,8 +20,12 @@ export interface HomepageAwardsSection extends Struct.ComponentSchema {
     displayName: 'Awards Section';
   };
   attributes: {
+    awardByLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     images: Schema.Attribute.Media<'images', true>;
     title: Schema.Attribute.String;
+    year: Schema.Attribute.String;
   };
 }
 
@@ -68,8 +72,21 @@ export interface HomepageInstagramSection extends Struct.ComponentSchema {
     displayName: 'Instagram Section';
   };
   attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     instagramHandle: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomepageSupporterAndCollabolators
+  extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_supporter_and_collabolators';
+  info: {
+    displayName: 'Supporter and Collabolators';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -198,6 +215,7 @@ declare module '@strapi/strapi' {
       'homepage.featured-by': HomepageFeaturedBy;
       'homepage.impact-stat': HomepageImpactStat;
       'homepage.instagram-section': HomepageInstagramSection;
+      'homepage.supporter-and-collabolators': HomepageSupporterAndCollabolators;
       'shared.flow-step': SharedFlowStep;
       'shared.info-card': SharedInfoCard;
       'shared.media': SharedMedia;
