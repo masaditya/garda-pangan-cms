@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_contact_action_cards",
+  "info": {
+    "displayName": "Action card",
+    "description": "Kartu topik Kontak dengan CTA Hubungi Kami"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ctaLabel": {
+      "type": "string",
+      "default": "Hubungi Kami"
+    },
+    "ctaLink": {
+      "type": "string"
+    }
+  }
+}

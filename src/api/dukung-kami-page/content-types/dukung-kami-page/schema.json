@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "dukung_kami_pages",
+  "info": {
+    "singularName": "dukung-kami-page",
+    "pluralName": "dukung-kami-pages",
+    "displayName": "Dukung Kami Page",
+    "description": "Halaman donasi: hero, copy, dan snippet embed pembayaran (mis. Midtrans)."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitleLine1": {
+      "type": "string",
+      "default": "Dukung"
+    },
+    "heroTitleLine2": {
+      "type": "string",
+      "default": "Kami"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "heroIntro": {
+      "type": "text"
+    },
+    "paymentEmbedCode": {
+      "type": "text",
+      "description": "Script atau HTML embed dari Midtrans / gateway donasi (paste dari dashboard)."
+    },
+    "paymentEmbedNote": {
+      "type": "text",
+      "description": "Teks pendek di bawah form (keamanan pembayaran, syarat, dll.)"
+    }
+  }
+}

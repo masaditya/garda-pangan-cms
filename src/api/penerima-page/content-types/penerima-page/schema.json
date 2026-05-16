@@ -5,15 +5,20 @@
     "singularName": "penerima-page",
     "pluralName": "penerima-pages",
     "displayName": "Penerima Page",
-    "description": "Header section for the Penerima Bantuan page"
+    "description": "Konten halaman Penerima Bantuan: hero dua baris, penjelasan, video testimoni YouTube"
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "heroTitle": {
-      "type": "string"
+    "heroTitleLine1": {
+      "type": "string",
+      "default": "Penerima"
+    },
+    "heroTitleLine2": {
+      "type": "string",
+      "default": "Bantuan"
     },
     "heroDescription": {
       "type": "text"
@@ -21,16 +26,33 @@
     "heroBackground": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "testimonialsEyebrow": {
+      "type": "string"
+    },
+    "testimonialsTitle": {
+      "type": "string",
+      "default": "Testimoni penerima manfaat"
+    },
+    "testimonialsSubtitle": {
+      "type": "text"
+    },
+    "youtubeTestimonialsUrl": {
+      "type": "string",
+      "description": "URL YouTube (watch, youtu.be, atau embed) untuk tombol Tonton Testimoni / modal embed."
+    },
+    "testimonialsVideoPoster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Thumbnail/poster sampel video testimoni."
     },
     "testimonialButtonLabel": {
-      "type": "string"
-    },
-    "testimonialButtonLink": {
-      "type": "string"
+      "type": "string",
+      "default": "Tonton Testimoni"
     }
   }
 }

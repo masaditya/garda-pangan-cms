@@ -5,7 +5,7 @@
     "singularName": "about",
     "pluralName": "abouts",
     "displayName": "About",
-    "description": "Write about yourself and the content you create"
+    "description": "Konten halaman Tentang Kami sesuai desain About page"
   },
   "options": {
     "draftAndPublish": false
@@ -27,7 +27,10 @@
     "historyTitle": {
       "type": "string"
     },
-    "historyContent": {
+    "historyContent1": {
+      "type": "richtext"
+    },
+    "historyContent2": {
       "type": "richtext"
     },
     "historyImages": {
@@ -36,11 +39,34 @@
       "required": false,
       "allowedTypes": ["images"]
     },
+    "visionTitle": {
+      "type": "string",
+      "default": "Visi"
+    },
+    "visionHighlight": {
+      "type": "text"
+    },
     "visionContent": {
       "type": "richtext"
     },
+    "missionTitle": {
+      "type": "string",
+      "default": "Misi"
+    },
     "missionContent": {
       "type": "richtext"
+    },
+    "targetDonaturTitle": {
+      "type": "string",
+      "default": "Target Donatur"
+    },
+    "targetPenerimaTitle": {
+      "type": "string",
+      "default": "Target Penerima"
+    },
+    "legalitasTitle": {
+      "type": "string",
+      "default": "Legalitas"
     },
     "legalityContent": {
       "type": "richtext"

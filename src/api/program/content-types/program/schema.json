@@ -17,9 +17,9 @@
       "required": true
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
-    "icon": {
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,

@@ -1,5 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactActionCard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_action_cards';
+  info: {
+    description: 'Kartu topik Kontak dengan CTA Hubungi Kami';
+    displayName: 'Action card';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Hubungi Kami'>;
+    ctaLink: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomepageAgentCard extends Struct.ComponentSchema {
   collectionName: 'components_homepage_agent_cards';
   info: {
@@ -209,6 +225,7 @@ export interface SharedStoreLink extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact.action-card': ContactActionCard;
       'homepage.agent-card': HomepageAgentCard;
       'homepage.awards-section': HomepageAwardsSection;
       'homepage.did-you-know': HomepageDidYouKnow;

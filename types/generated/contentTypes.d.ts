@@ -433,7 +433,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
-    description: 'Write about yourself and the content you create';
+    description: 'Konten halaman Tentang Kami sesuai desain About page';
     displayName: 'About';
     pluralName: 'abouts';
     singularName: 'about';
@@ -448,26 +448,36 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     heroBackground: Schema.Attribute.Media<'images' | 'videos'>;
     heroSubtitle: Schema.Attribute.Text;
     heroTitle: Schema.Attribute.String;
-    historyContent: Schema.Attribute.RichText;
+    historyContent1: Schema.Attribute.RichText;
+    historyContent2: Schema.Attribute.RichText;
     historyImages: Schema.Attribute.Media<'images', true>;
     historyTitle: Schema.Attribute.String;
+    legalitasTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Legalitas'>;
     legalityContent: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
     missionContent: Schema.Attribute.RichText;
+    missionTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Misi'>;
     publishedAt: Schema.Attribute.DateTime;
+    targetDonaturTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Target Donatur'>;
+    targetPenerimaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Target Penerima'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     visionContent: Schema.Attribute.RichText;
+    visionHighlight: Schema.Attribute.Text;
+    visionTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Visi'>;
   };
 }
 
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
-    description: 'Create your blog content';
+    description: 'Artikel Knowledge & Insights dengan isi utama dari Rich Text Editor';
     displayName: 'Article';
     pluralName: 'articles';
     singularName: 'article';
@@ -477,17 +487,16 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
+    carouselImages: Schema.Attribute.Media<'images', true>;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    cover: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
+        maxLength: 300;
       }>;
     isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -498,7 +507,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -508,7 +517,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
-    description: 'Create authors for your content';
+    description: 'Penulis artikel Knowledge & Insights';
     displayName: 'Author';
     pluralName: 'authors';
     singularName: 'author';
@@ -519,6 +528,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   attributes: {
     articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    bio: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -569,7 +579,7 @@ export interface ApiAwardAward extends Struct.CollectionTypeSchema {
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
-    description: 'Organize your content into categories';
+    description: 'Kategori Knowledge & Insights; thumbnail untuk carousel bisa lebih dari satu gambar';
     displayName: 'Category';
     pluralName: 'categories';
     singularName: 'category';
@@ -589,9 +599,83 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       'api::category.category'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
+    slug: Schema.Attribute.UID<'name'>;
+    sortOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    thumbnails: Schema.Attribute.Media<'images', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact-pages';
+  info: {
+    description: 'Konten halaman Hubungi / Contact Us dengan kartu ajakan bertindak.';
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    actionCards: Schema.Attribute.Component<'contact.action-card', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroBackground: Schema.Attribute.Media<'images' | 'videos'>;
+    heroIntro: Schema.Attribute.Text;
+    heroTitleLine1: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Hubungi'>;
+    heroTitleLine2: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Kami'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDukungKamiPageDukungKamiPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'dukung_kami_pages';
+  info: {
+    description: 'Halaman donasi: hero, copy, dan snippet embed pembayaran (mis. Midtrans).';
+    displayName: 'Dukung Kami Page';
+    pluralName: 'dukung-kami-pages';
+    singularName: 'dukung-kami-page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroBackground: Schema.Attribute.Media<'images' | 'videos'>;
+    heroIntro: Schema.Attribute.Text;
+    heroTitleLine1: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Dukung'>;
+    heroTitleLine2: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Kami'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dukung-kami-page.dukung-kami-page'
+    > &
+      Schema.Attribute.Private;
+    paymentEmbedCode: Schema.Attribute.Text;
+    paymentEmbedNote: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -813,7 +897,7 @@ export interface ApiInstagramFeedInstagramFeed
 export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
   collectionName: 'knowledge-pages';
   info: {
-    description: 'Hero section for the Knowledge & Insights page';
+    description: 'Hero, pencarian, dan label filter untuk Knowledge & Insights';
     displayName: 'Knowledge Page';
     pluralName: 'knowledge-pages';
     singularName: 'knowledge-page';
@@ -822,10 +906,17 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    categoryFilterLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Kategori'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    emptyListMessage: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Tidak ada artikel yang cocok dengan filter Anda.'>;
+    filterAllLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Tampilkan Semua'>;
     heroBackground: Schema.Attribute.Media<'images'>;
+    heroSubtitle: Schema.Attribute.String;
     heroTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -833,7 +924,17 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
       'api::knowledge-page.knowledge-page'
     > &
       Schema.Attribute.Private;
+    paginationNextLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Next'>;
+    paginationPrevLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Previous'>;
     publishedAt: Schema.Attribute.DateTime;
+    searchPlaceholder: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Cari Knowledge & Insights'>;
+    searchSubmitLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Search'>;
+    sortNewestLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Terbaru'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1013,7 +1114,7 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
 export interface ApiPenerimaPagePenerimaPage extends Struct.SingleTypeSchema {
   collectionName: 'penerima-pages';
   info: {
-    description: 'Header section for the Penerima Bantuan page';
+    description: 'Konten halaman Penerima Bantuan: hero dua baris, penjelasan, video testimoni YouTube';
     displayName: 'Penerima Page';
     pluralName: 'penerima-pages';
     singularName: 'penerima-page';
@@ -1027,7 +1128,10 @@ export interface ApiPenerimaPagePenerimaPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     heroBackground: Schema.Attribute.Media<'images' | 'videos'>;
     heroDescription: Schema.Attribute.Text;
-    heroTitle: Schema.Attribute.String;
+    heroTitleLine1: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Penerima'>;
+    heroTitleLine2: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Bantuan'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1035,11 +1139,17 @@ export interface ApiPenerimaPagePenerimaPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    testimonialButtonLabel: Schema.Attribute.String;
-    testimonialButtonLink: Schema.Attribute.String;
+    testimonialButtonLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Tonton Testimoni'>;
+    testimonialsEyebrow: Schema.Attribute.String;
+    testimonialsSubtitle: Schema.Attribute.Text;
+    testimonialsTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Testimoni penerima manfaat'>;
+    testimonialsVideoPoster: Schema.Attribute.Media<'images'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    youtubeTestimonialsUrl: Schema.Attribute.String;
   };
 }
 
@@ -1060,8 +1170,7 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     ctaLabel: Schema.Attribute.String;
     ctaLink: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images'>;
+    description: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1069,6 +1178,7 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1656,6 +1766,8 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::award.award': ApiAwardAward;
       'api::category.category': ApiCategoryCategory;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::dukung-kami-page.dukung-kami-page': ApiDukungKamiPageDukungKamiPage;
       'api::event-page.event-page': ApiEventPageEventPage;
       'api::event.event': ApiEventEvent;
       'api::fact.fact': ApiFactFact;

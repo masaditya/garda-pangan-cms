@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact-pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Konten halaman Hubungi / Contact Us dengan kartu ajakan bertindak."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitleLine1": {
+      "type": "string",
+      "default": "Hubungi"
+    },
+    "heroTitleLine2": {
+      "type": "string",
+      "default": "Kami"
+    },
+    "heroBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "heroIntro": {
+      "type": "text"
+    },
+    "actionCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.action-card"
+    }
+  }
+}
