@@ -10,7 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
@@ -27,13 +31,23 @@
       "multiple": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::merchandise-category.merchandise-category",
-      "inversedBy": "merchandises"
+      "inversedBy": "merchandises",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "storeLinks": {
       "type": "component",
