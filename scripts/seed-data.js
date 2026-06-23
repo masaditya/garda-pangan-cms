@@ -790,6 +790,340 @@ const articles = [
   },
 ];
 
+/* ─── Merchandise Categories ─── */
+const merchandiseCategories = [
+  {
+    key: 'kaos',
+    id: { name: 'Kaos' },
+    en: { name: 'T-Shirts' },
+  },
+  {
+    key: 'pupuk-organik',
+    id: { name: 'Pupuk Organik' },
+    en: { name: 'Organic Fertilizer' },
+  },
+  {
+    key: 'aksesori',
+    id: { name: 'Aksesori' },
+    en: { name: 'Accessories' },
+  },
+  {
+    key: 'tumbler-botol',
+    id: { name: 'Tumbler & Botol' },
+    en: { name: 'Tumblers & Bottles' },
+  },
+];
+
+/* ─── Merchandises ─── */
+const merchandises = [
+  {
+    key: 'kaos-food-hero',
+    categoryKey: 'kaos',
+    releaseDate: '2024-06-01',
+    storeLinks: [
+      { platformName: 'Tokopedia', url: 'https://tokopedia.link/gardapangan-kaos-foodhero' },
+      { platformName: 'Shopee', url: 'https://shopee.co.id/gardapangan-kaos-foodhero' },
+    ],
+    id: {
+      title: 'Kaos Food Hero',
+      description:
+        'Kaos eksklusif Garda Pangan bertema Food Hero. Bahan katun combed 30s premium, nyaman digunakan sehari-hari sekaligus menyuarakan gerakan anti food waste.',
+    },
+    en: {
+      title: 'Food Hero T-Shirt',
+      description:
+        'Exclusive Garda Pangan Food Hero tee. Premium combed cotton 30s, comfortable for everyday wear while spreading the anti-food-waste movement.',
+    },
+  },
+  {
+    key: 'kaos-zero-waste',
+    categoryKey: 'kaos',
+    releaseDate: '2024-08-15',
+    storeLinks: [
+      { platformName: 'Tokopedia', url: 'https://tokopedia.link/gardapangan-kaos-zerowaste' },
+    ],
+    id: {
+      title: 'Kaos Zero Waste Lifestyle',
+      description:
+        'Desain eksklusif bertema Zero Waste Lifestyle. Bahan organik ramah lingkungan, pewarna non-toksik, cocok untuk para aktivis lingkungan.',
+    },
+    en: {
+      title: 'Zero Waste Lifestyle T-Shirt',
+      description:
+        'Exclusive Zero Waste Lifestyle design. Eco-friendly organic fabric with non-toxic dyes, perfect for environmental advocates.',
+    },
+  },
+  {
+    key: 'pupuk-kompos-5kg',
+    categoryKey: 'pupuk-organik',
+    releaseDate: '2025-01-10',
+    storeLinks: [
+      { platformName: 'Tokopedia', url: 'https://tokopedia.link/gardapangan-kompos5kg' },
+    ],
+    id: {
+      title: 'Pupuk Kompos Organik 5 Kg',
+      description:
+        'Pupuk kompos premium hasil pengolahan limbah makanan oleh Garda Pangan. Kaya nutrisi untuk tanaman hias dan sayuran, mendukung pertanian berkelanjutan.',
+    },
+    en: {
+      title: 'Organic Compost Fertilizer 5 Kg',
+      description:
+        'Premium compost fertilizer made from food waste processed by Garda Pangan. Nutrient-rich for ornamental and vegetable plants, supporting sustainable farming.',
+    },
+  },
+  {
+    key: 'tote-bag-garda-pangan',
+    categoryKey: 'aksesori',
+    releaseDate: '2024-03-20',
+    storeLinks: [
+      { platformName: 'Shopee', url: 'https://shopee.co.id/gardapangan-totebag' },
+    ],
+    id: {
+      title: 'Tote Bag Garda Pangan',
+      description:
+        'Tote bag kanvas tebal dengan desain khas Garda Pangan. Alternatif tas belanja ramah lingkungan, kuat, dan tahan lama.',
+    },
+    en: {
+      title: 'Garda Pangan Tote Bag',
+      description:
+        'Heavy-duty canvas tote bag with Garda Pangan design. An eco-friendly shopping bag alternative that is strong and durable.',
+    },
+  },
+  {
+    key: 'tumbler-stainless-500ml',
+    categoryKey: 'tumbler-botol',
+    releaseDate: '2025-02-14',
+    storeLinks: [
+      { platformName: 'Tokopedia', url: 'https://tokopedia.link/gardapangan-tumbler' },
+      { platformName: 'Shopee', url: 'https://shopee.co.id/gardapangan-tumbler' },
+    ],
+    id: {
+      title: 'Tumbler Stainless 500ml',
+      description:
+        'Tumbler stainless steel 500ml edisi Garda Pangan. Tahan panas dan dingin hingga 12 jam, cocok untuk mengurangi penggunaan gelas sekali pakai.',
+    },
+    en: {
+      title: 'Stainless Tumbler 500ml',
+      description:
+        'Garda Pangan edition 500ml stainless steel tumbler. Keeps drinks hot or cold for up to 12 hours, perfect for reducing single-use cup waste.',
+    },
+  },
+  {
+    key: 'pin-badge-set',
+    categoryKey: 'aksesori',
+    releaseDate: '2024-11-05',
+    storeLinks: [
+      { platformName: 'Tokopedia', url: 'https://tokopedia.link/gardapangan-pinbadge' },
+    ],
+    id: {
+      title: 'Pin Badge Set Food Rescue',
+      description:
+        'Set 3 pin badge eksklusif bertema food rescue. Cocok untuk aksesori tas, jaket, atau topi. Tunjukkan dukunganmu terhadap gerakan anti food waste!',
+    },
+    en: {
+      title: 'Food Rescue Pin Badge Set',
+      description:
+        'Set of 3 exclusive food rescue themed pin badges. Great for bags, jackets, or caps. Show your support for the anti-food-waste movement!',
+    },
+  },
+];
+
+/* ─── Events ─── */
+const events = [
+  {
+    key: 'food-rescue-run-2025',
+    date: '2025-03-15',
+    location: 'Taman Bungkul, Surabaya',
+    eventTag: 'Food Rescue',
+    id: {
+      title: 'Food Rescue Run 2025',
+      summary:
+        'Lari santai 5K yang menggabungkan olahraga dan aksi sosial. Setiap peserta mendanai 10 porsi makanan untuk masyarakat pra-sejahtera.',
+      content:
+        'Food Rescue Run 2025 adalah acara lari santai sejauh 5K yang diadakan di Taman Bungkul, Surabaya. Acara ini bertujuan menggabungkan gaya hidup sehat dengan aksi sosial nyata.\n\nSetiap pendaftaran peserta secara langsung mendanai 10 porsi makanan yang akan didistribusikan kepada masyarakat pra-sejahtera di sekitar Surabaya. Selain lari, peserta juga akan mendapatkan edukasi singkat tentang food waste dan dampaknya terhadap lingkungan.',
+    },
+    en: {
+      title: 'Food Rescue Run 2025',
+      summary:
+        'A 5K fun run combining fitness and social action. Each participant funds 10 meals for underprivileged communities.',
+      content:
+        'Food Rescue Run 2025 is a 5K fun run held at Taman Bungkul, Surabaya. This event aims to combine healthy living with tangible social action.\n\nEach registration directly funds 10 meals to be distributed to underprivileged communities around Surabaya. Beyond running, participants will also receive brief education about food waste and its environmental impact.',
+    },
+  },
+  {
+    key: 'workshop-zero-food-waste',
+    date: '2025-04-22',
+    location: 'Ciputra World, Surabaya',
+    eventTag: 'Workshop',
+    id: {
+      title: 'Workshop Zero Food Waste di Rumah',
+      summary:
+        'Workshop interaktif tentang cara mengelola makanan di rumah agar tidak terbuang, mulai dari belanja cerdas hingga memasak kreatif.',
+      content:
+        'Workshop ini mengajarkan peserta teknik praktis untuk mengurangi food waste di tingkat rumah tangga. Materi mencakup perencanaan belanja, penyimpanan bahan makanan yang tepat, dan resep kreatif dari sisa makanan.\n\nPeserta akan mendapatkan kit Zero Waste starter pack dan sertifikat partisipasi. Acara ini diadakan dalam rangka memperingati Hari Bumi 2025.',
+    },
+    en: {
+      title: 'Zero Food Waste at Home Workshop',
+      summary:
+        'An interactive workshop on managing food at home to prevent waste, from smart shopping to creative cooking.',
+      content:
+        'This workshop teaches participants practical techniques to reduce food waste at household level. Topics include shopping planning, proper food storage, and creative leftover recipes.\n\nParticipants will receive a Zero Waste starter kit and a certificate of participation. This event is held in celebration of Earth Day 2025.',
+    },
+  },
+  {
+    key: 'food-rescue-day-surabaya',
+    date: '2025-06-17',
+    location: 'Balai Kota Surabaya',
+    eventTag: 'Kampanye',
+    id: {
+      title: 'Hari Food Rescue Surabaya 2025',
+      summary:
+        'Peringatan tahunan Hari Food Rescue Surabaya dengan pameran, talkshow, dan aksi distribusi makanan berskala besar.',
+      content:
+        'Hari Food Rescue Surabaya 2025 merupakan peringatan tahunan yang diadakan di Balai Kota Surabaya. Acara ini menampilkan pameran interaktif tentang perjalanan food rescue di Indonesia, talkshow bersama pemerhati pangan, serta aksi distribusi makanan ke 500 keluarga pra-sejahtera.\n\nAcara ini terbuka untuk umum dan gratis. Mari bersama-sama mewujudkan Surabaya bebas food waste!',
+    },
+    en: {
+      title: 'Surabaya Food Rescue Day 2025',
+      summary:
+        'Annual Surabaya Food Rescue Day celebration with exhibitions, talkshows, and large-scale food distribution.',
+      content:
+        'Surabaya Food Rescue Day 2025 is an annual celebration held at Surabaya City Hall. The event features interactive exhibitions on the food rescue journey in Indonesia, talkshows with food sustainability experts, and food distribution to 500 underprivileged families.\n\nThe event is open to the public and free of charge. Join us in making Surabaya food-waste free!',
+    },
+  },
+  {
+    key: 'cooking-class-leftover',
+    date: '2025-07-10',
+    location: 'Garda Pangan HQ, Surabaya',
+    eventTag: 'Edukasi',
+    id: {
+      title: 'Cooking Class: Kreasi dari Sisa Makanan',
+      summary:
+        'Kelas memasak kreatif yang mengubah sisa makanan menjadi hidangan lezat dan bergizi tinggi.',
+      content:
+        'Cooking Class ini mengajak peserta untuk belajar mengolah sisa makanan menjadi hidangan yang lezat dan bergizi. Dipandu oleh chef berpengalaman, peserta akan membuat minimal 3 menu dari bahan-bahan yang biasanya terbuang.\n\nSelain belajar memasak, peserta juga mendapatkan pengetahuan tentang food recovery hierarchy dan pentingnya mengurangi sampah makanan di tingkat rumah tangga.',
+    },
+    en: {
+      title: 'Cooking Class: Leftover Creations',
+      summary:
+        'A creative cooking class that transforms leftovers into delicious, nutritious dishes.',
+      content:
+        'This Cooking Class invites participants to learn how to turn food leftovers into delicious and nutritious dishes. Led by an experienced chef, participants will create at least 3 menus from commonly wasted ingredients.\n\nBeyond cooking, participants also gain knowledge about the food recovery hierarchy and the importance of reducing food waste at household level.',
+    },
+  },
+  {
+    key: 'seminar-kebijakan-pangan',
+    date: '2025-09-05',
+    location: 'Hotel Majapahit, Surabaya',
+    eventTag: 'Seminar',
+    id: {
+      title: 'Seminar Kebijakan Pangan Berkelanjutan',
+      summary:
+        'Seminar nasional membahas regulasi dan kebijakan terkait pengelolaan pangan berkelanjutan di Indonesia.',
+      content:
+        'Seminar Kebijakan Pangan Berkelanjutan menghadirkan pembicara dari Kementerian Pertanian, akademisi, dan praktisi food rescue untuk membahas tantangan dan peluang dalam membangun sistem pangan berkelanjutan di Indonesia.\n\nTopik yang dibahas meliputi regulasi food donation, standar keamanan pangan untuk makanan redistribusi, serta peran teknologi dalam mengurangi food loss di rantai pasok.',
+    },
+    en: {
+      title: 'Sustainable Food Policy Seminar',
+      summary:
+        'A national seminar discussing regulations and policies on sustainable food management in Indonesia.',
+      content:
+        'The Sustainable Food Policy Seminar features speakers from the Ministry of Agriculture, academics, and food rescue practitioners to discuss challenges and opportunities in building a sustainable food system in Indonesia.\n\nTopics covered include food donation regulations, food safety standards for redistributed food, and the role of technology in reducing food loss in the supply chain.',
+    },
+  },
+  {
+    key: 'volunteer-gathering-2025',
+    date: '2025-12-20',
+    location: 'Garda Pangan HQ, Surabaya',
+    eventTag: 'Komunitas',
+    id: {
+      title: 'Volunteer Gathering & Apresiasi 2025',
+      summary:
+        'Acara kumpul relawan tahunan sebagai bentuk apresiasi dan refleksi atas pencapaian gerakan food rescue sepanjang tahun.',
+      content:
+        'Volunteer Gathering & Apresiasi 2025 adalah acara tahunan yang mengundang seluruh relawan dan mitra Garda Pangan untuk berkumpul, bertukar cerita, dan merayakan pencapaian bersama selama setahun.\n\nAcara ini meliputi pemutaran video highlight, penghargaan untuk relawan terbaik, dan sesi sharing tentang rencana program tahun depan. Tersedia juga makan bersama dengan menu yang seluruhnya berasal dari food rescue.',
+    },
+    en: {
+      title: 'Volunteer Gathering & Appreciation 2025',
+      summary:
+        'Annual volunteer meetup as a form of appreciation and reflection on the food rescue movement achievements throughout the year.',
+      content:
+        'Volunteer Gathering & Appreciation 2025 is an annual event inviting all Garda Pangan volunteers and partners to gather, share stories, and celebrate the year\'s achievements together.\n\nThe event includes highlight video screenings, awards for top volunteers, and sharing sessions about next year\'s program plans. A communal meal made entirely from rescued food is also provided.',
+    },
+  },
+];
+
+/* ─── Programs ─── */
+const programs = [
+  {
+    key: 'donasi-makanan',
+    id: {
+      title: 'Donasi Makanan',
+      description:
+        'Salurkan kelebihan makanan layak konsumsi Anda untuk mereka yang membutuhkan melalui sistem food rescue kami. Garda Pangan menjamin proses penjemputan, pengemasan, dan distribusi yang higienis serta bermartabat.',
+      ctaLabel: 'Donasi Sekarang',
+      ctaLink: '/contact',
+    },
+    en: {
+      title: 'Food Donation',
+      description:
+        'Donate your surplus edible food to those in need through our food rescue system. Garda Pangan ensures hygienic and dignified pickup, packaging, and distribution processes.',
+      ctaLabel: 'Donate Now',
+      ctaLink: '/contact',
+    },
+  },
+  {
+    key: 'menjadi-relawan',
+    id: {
+      title: 'Menjadi Relawan',
+      description:
+        'Bergabunglah sebagai Food Heroes dan bantu kami mendistribusikan makanan ke titik-titik penerima manfaat. Relawan kami adalah tulang punggung gerakan food rescue yang bergerak di lapangan.',
+      ctaLabel: 'Gabung Relawan',
+      ctaLink: '/contact',
+    },
+    en: {
+      title: 'Become a Volunteer',
+      description:
+        'Join as Food Heroes and help us distribute meals to beneficiary communities. Our volunteers are the backbone of the food rescue movement on the ground.',
+      ctaLabel: 'Join as Volunteer',
+      ctaLink: '/contact',
+    },
+  },
+  {
+    key: 'donasi-dana',
+    id: {
+      title: 'Donasi Dana',
+      description:
+        'Dukung operasional kami untuk menjangkau lebih banyak orang dan menyelamatkan lebih banyak makanan. Setiap rupiah yang Anda donasikan langsung dialokasikan untuk logistik, pengemasan, dan distribusi makanan.',
+      ctaLabel: 'Donasi Dana',
+      ctaLink: '/dukung-kami',
+    },
+    en: {
+      title: 'Financial Donation',
+      description:
+        'Support our operations to reach more people and rescue more food. Every rupiah you donate is directly allocated to food logistics, packaging, and distribution.',
+      ctaLabel: 'Donate Funds',
+      ctaLink: '/dukung-kami',
+    },
+  },
+  {
+    key: 'edukasi-food-waste',
+    id: {
+      title: 'Edukasi & Kampanye Food Waste',
+      description:
+        'Ikuti program edukasi dan kampanye anti food waste dari Garda Pangan. Kami menyediakan materi interaktif, workshop, dan kunjungan edukasi untuk sekolah, universitas, dan perusahaan.',
+      ctaLabel: 'Pelajari Lebih Lanjut',
+      ctaLink: '/knowledge',
+    },
+    en: {
+      title: 'Food Waste Education & Campaign',
+      description:
+        'Join Garda Pangan food waste education programs and campaigns. We provide interactive materials, workshops, and educational visits for schools, universities, and companies.',
+      ctaLabel: 'Learn More',
+      ctaLink: '/knowledge',
+    },
+  },
+];
+
 function slugify(title) {
   return title
     .toLowerCase()
@@ -810,6 +1144,10 @@ module.exports = {
   categories,
   authors,
   articles,
+  merchandiseCategories,
+  merchandises,
+  events,
+  programs,
   slugify,
   articleContent,
 };

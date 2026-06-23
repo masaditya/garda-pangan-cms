@@ -13,6 +13,10 @@ const {
   categories,
   authors,
   articles,
+  merchandiseCategories,
+  merchandises,
+  events,
+  programs,
   slugify,
   articleContent,
 } = require('./seed-data');
@@ -34,6 +38,10 @@ async function runSeed(strapi, options = {}) {
     'api::author.author',
     'api::testimonial.testimonial',
     'api::target-audience.target-audience',
+    'api::merchandise.merchandise',
+    'api::merchandise-category.merchandise-category',
+    'api::event.event',
+    'api::program.program',
       ]
     : [];
 
@@ -132,6 +140,103 @@ async function runSeed(strapi, options = {}) {
       );
     } catch (e) {
       console.error(`❌ Failed article ${art.key}:`, e.message);
+    }
+  }
+
+  /* ─── Merchandise Categories ─── */
+  const merchCatDocIdByKey = {};
+  for (const mc of merchandiseCategories) {
+    try {
+      const documentId = await seedLocalizedCollectionEntry(
+        strapi,
+        'api::merchandise-category.merchandise-category',
+        { id: mc.id, en: mc.en },
+        { status: 'published' }
+      );
+      merchCatDocIdByKey[mc.key] = documentId;
+    } catch (e) {
+      console.error(`❌ Failed merchandise category ${mc.key}:`, e.message);
+    }
+  }
+
+  /* ─── Merchandises ─── */
+  for (const merch of merchandises) {
+    try {
+      const catDocId = merchCatDocIdByKey[merch.categoryKey];
+      if (!catDocId) {
+        throw new Error(`Missing merchandise-category for ${merch.key}`);
+      }
+
+      const idPayload = {
+        title: merch.id.title,
+        description: merch.id.description,
+        releaseDate: merch.releaseDate,
+        category: catDocId,
+        storeLinks: merch.storeLinks,
+      };
+      const enPayload = {
+        title: merch.en.title,
+        description: merch.en.description,
+        releaseDate: merch.releaseDate,
+        category: catDocId,
+        storeLinks: merch.storeLinks,
+      };
+
+      await seedLocalizedCollectionEntry(
+        strapi,
+        'api::merchandise.merchandise',
+        { id: idPayload, en: enPayload },
+        { status: 'published' }
+      );
+    } catch (e) {
+      console.error(`❌ Failed merchandise ${merch.key}:`, e.message);
+    }
+  }
+
+  /* ─── Events ─── */
+  for (const evt of events) {
+    try {
+      const idPayload = {
+        title: evt.id.title,
+        slug: slugify(evt.id.title),
+        date: evt.date,
+        location: evt.location,
+        eventTag: evt.eventTag,
+        summary: evt.id.summary,
+        content: evt.id.content,
+      };
+      const enPayload = {
+        title: evt.en.title,
+        slug: slugify(evt.en.title),
+        date: evt.date,
+        location: evt.location,
+        eventTag: evt.eventTag,
+        summary: evt.en.summary,
+        content: evt.en.content,
+      };
+
+      await seedLocalizedCollectionEntry(
+        strapi,
+        'api::event.event',
+        { id: idPayload, en: enPayload },
+        { status: 'published' }
+      );
+    } catch (e) {
+      console.error(`❌ Failed event ${evt.key}:`, e.message);
+    }
+  }
+
+  /* ─── Programs ─── */
+  for (const prog of programs) {
+    try {
+      await seedLocalizedCollectionEntry(
+        strapi,
+        'api::program.program',
+        { id: prog.id, en: prog.en },
+        { status: 'published' }
+      );
+    } catch (e) {
+      console.error(`❌ Failed program ${prog.key}:`, e.message);
     }
   }
 
