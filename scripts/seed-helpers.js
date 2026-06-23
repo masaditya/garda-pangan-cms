@@ -20,9 +20,14 @@ async function ensureLocales(strapi) {
     if (!existing) {
       await localesService.create(def);
       console.log(`✅ Created locale: ${def.code}`);
-    } else if (def.isDefault && !existing.isDefault) {
-      await localesService.update(existing.id, { isDefault: true });
-      console.log(`✅ Set default locale: ${def.code}`);
+    }
+
+    if (def.isDefault) {
+      const currentDefault = await localesService.getDefaultLocale();
+      if (currentDefault !== def.code) {
+        await localesService.setDefaultLocale({ code: def.code });
+        console.log(`✅ Set default locale: ${def.code}`);
+      }
     }
   }
 }
@@ -43,6 +48,10 @@ async function wipeCollection(strapi, uid) {
 async function seedLocalizedSingleType(strapi, uid, dataByLocale) {
   const docs = strapi.documents(uid);
 
+  // Find the master documentId from default locale 'id' if it already exists
+  const masterEntry = await docs.findFirst({ locale: 'id' });
+  let documentId = masterEntry?.documentId;
+
   for (const locale of LOCALES) {
     const data = dataByLocale[locale];
     if (!data) continue;
@@ -56,7 +65,16 @@ async function seedLocalizedSingleType(strapi, uid, dataByLocale) {
       });
       console.log(`🔄 Updated ${uid} [${locale}]`);
     } else {
-      await docs.create({ locale, data });
+      if (documentId) {
+        await docs.create({
+          documentId,
+          locale,
+          data,
+        });
+      } else {
+        const created = await docs.create({ locale, data });
+        documentId = created.documentId;
+      }
       console.log(`✅ Created ${uid} [${locale}]`);
     }
   }
@@ -106,7 +124,7 @@ async function seedLocalizedCollectionEntry(strapi, uid, dataByLocale, options =
     });
     console.log(`🔄 Updated ${uid} [en] documentId=${documentId}`);
   } else {
-    await docs.update({
+    await docs.create({
       documentId,
       locale: 'en',
       data: enData,
