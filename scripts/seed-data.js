@@ -1137,6 +1137,24 @@ function articleContent(locale) {
   return `${sampleParagraph[locale]}\n\n${sampleParagraphExtra[locale]}`;
 }
 
+const facts = [
+  {
+    key: 'fact-1',
+    id: { content: 'Tahukah kamu bahwa 1/3 makanan di dunia terbuang percuma?' },
+    en: { content: 'Did you know that one-third of food in the world is wasted?' },
+  },
+  {
+    key: 'fact-2',
+    id: { content: 'Indonesia adalah pembuang makanan terbesar kedua di dunia.' },
+    en: { content: 'Indonesia is the second-largest food waster in the world.' },
+  },
+  {
+    key: 'fact-3',
+    id: { content: 'Food waste menyumbang 8-10% emisi gas rumah kaca global.' },
+    en: { content: 'Food waste contributes 8–10% of global greenhouse gas emissions.' },
+  },
+];
+
 module.exports = {
   singleTypes,
   testimonials,
@@ -1148,6 +1166,7 @@ module.exports = {
   merchandises,
   events,
   programs,
+  facts,
   slugify,
   articleContent,
 };

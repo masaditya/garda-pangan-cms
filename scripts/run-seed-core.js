@@ -17,6 +17,7 @@ const {
   merchandises,
   events,
   programs,
+  facts,
   slugify,
   articleContent,
 } = require('./seed-data');
@@ -42,6 +43,7 @@ async function runSeed(strapi, options = {}) {
     'api::merchandise-category.merchandise-category',
     'api::event.event',
     'api::program.program',
+    'api::fact.fact',
       ]
     : [];
 
@@ -237,6 +239,20 @@ async function runSeed(strapi, options = {}) {
       );
     } catch (e) {
       console.error(`❌ Failed program ${prog.key}:`, e.message);
+    }
+  }
+
+  /* ─── Facts ─── */
+  for (const fact of facts) {
+    try {
+      await seedLocalizedCollectionEntry(
+        strapi,
+        'api::fact.fact',
+        { id: fact.id, en: fact.en },
+        { status: 'published' }
+      );
+    } catch (e) {
+      console.error(`❌ Failed fact ${fact.key}:`, e.message);
     }
   }
 
