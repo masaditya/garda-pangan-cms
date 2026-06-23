@@ -24,6 +24,9 @@ const singleTypes = {
         { content: 'Tahukah kamu bahwa 1/3 makanan di dunia terbuang percuma?' },
         { content: 'Indonesia adalah pembuang makanan terbesar kedua di dunia.' },
         { content: 'Food waste menyumbang 8-10% emisi gas rumah kaca global.' },
+        { content: 'Setiap tahunnya, sekitar 1.3 miliar ton makanan terbuang secara global.' },
+        { content: 'Membuang makanan berarti juga membuang sumber daya seperti air, energi, dan tenaga kerja.' },
+        { content: 'Menyelamatkan makanan berlebih dapat membantu mengentaskan kelaparan di masyarakat.' },
       ],
       impactTitle: 'Dampak Kami',
       impactStats: [
@@ -85,6 +88,9 @@ const singleTypes = {
         { content: 'Did you know that one-third of food in the world is wasted?' },
         { content: 'Indonesia is the second-largest food waster in the world.' },
         { content: 'Food waste contributes 8–10% of global greenhouse gas emissions.' },
+        { content: 'Every year, around 1.3 billion tons of food is wasted globally.' },
+        { content: 'Wasting food also means wasting resources like water, energy, and labor.' },
+        { content: 'Rescuing surplus food can help alleviate hunger in our communities.' },
       ],
       impactTitle: 'Our Impact',
       impactStats: [
