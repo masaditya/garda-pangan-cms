@@ -6,15 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "subtitle": {
-      "type": "string"
-    },
-    "instagramHandle": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -24,6 +15,9 @@
         "videos",
         "audios"
       ]
+    },
+    "instagramLink": {
+      "type": "text"
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_footer_social_links",
+  "info": {
+    "displayName": "footerSocialLinks",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "youtube": {
+      "type": "text"
+    },
+    "tiktok": {
+      "type": "text"
+    },
+    "linkedin": {
+      "type": "text"
+    },
+    "instagram": {
+      "type": "text"
+    },
+    "facebook": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

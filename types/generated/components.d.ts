@@ -23,6 +23,8 @@ export interface HomepageAgentCard extends Struct.ComponentSchema {
     displayName: 'Agent Card';
   };
   attributes: {
+    ctaLink: Schema.Attribute.String;
+    ctaText: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -39,7 +41,7 @@ export interface HomepageAwardsSection extends Struct.ComponentSchema {
     awardByLogo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    images: Schema.Attribute.Media<'images', true>;
+    images: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     year: Schema.Attribute.String;
   };
@@ -75,7 +77,6 @@ export interface HomepageImpactStat extends Struct.ComponentSchema {
     displayName: 'Impact Stat';
   };
   attributes: {
-    image: Schema.Attribute.Media<'images'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     value: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -89,9 +90,7 @@ export interface HomepageInstagramSection extends Struct.ComponentSchema {
   };
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    instagramHandle: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    instagramLink: Schema.Attribute.Text;
   };
 }
 
@@ -121,6 +120,21 @@ export interface SharedFlowStep extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     icon: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedFooterSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_social_links';
+  info: {
+    displayName: 'footerSocialLinks';
+    icon: 'globe';
+  };
+  attributes: {
+    facebook: Schema.Attribute.Text;
+    instagram: Schema.Attribute.Text;
+    linkedin: Schema.Attribute.Text;
+    tiktok: Schema.Attribute.Text;
+    youtube: Schema.Attribute.Text;
   };
 }
 
@@ -222,6 +236,30 @@ export interface SharedStoreLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTargetDonaturCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_target_donatur_cards';
+  info: {
+    displayName: 'targetDonaturCard';
+    icon: 'restaurant';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTargetPenerimaCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_target_penerima_cards';
+  info: {
+    displayName: 'targetPenerimaCard';
+    icon: 'handHeart';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -234,6 +272,7 @@ declare module '@strapi/strapi' {
       'homepage.instagram-section': HomepageInstagramSection;
       'homepage.supporter-and-collabolators': HomepageSupporterAndCollabolators;
       'shared.flow-step': SharedFlowStep;
+      'shared.footer-social-links': SharedFooterSocialLinks;
       'shared.info-card': SharedInfoCard;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
@@ -242,6 +281,8 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.social-link': SharedSocialLink;
       'shared.store-link': SharedStoreLink;
+      'shared.target-donatur-card': SharedTargetDonaturCard;
+      'shared.target-penerima-card': SharedTargetPenerimaCard;
     }
   }
 }

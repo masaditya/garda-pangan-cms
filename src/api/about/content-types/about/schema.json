@@ -60,25 +60,52 @@
     "historyContent2": {
       "type": "richtext"
     },
-    "historyImages": {
+    "historyImage1": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
       ]
     },
+    "historyImage2": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "historyImage3": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "visionTitle": {
       "type": "string",
       "default": "Visi"
-    },
-    "visionHighlight": {
-      "type": "text"
     },
     "visionContent": {
       "type": "richtext"
@@ -97,6 +124,26 @@
     "targetPenerimaTitle": {
       "type": "string",
       "default": "Target Penerima"
+    },
+    "targetDonaturCards": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.target-donatur-card",
+      "repeatable": true
+    },
+    "targetPenerimaCards": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.target-penerima-card",
+      "repeatable": true
     },
     "legalitasTitle": {
       "type": "string",

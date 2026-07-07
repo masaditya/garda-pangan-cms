@@ -16,65 +16,37 @@
     }
   },
   "attributes": {
-    "heroTitle": {
-      "type": "string"
-    },
-    "heroSubtitle": {
-      "type": "string"
-    },
     "heroBackground": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
+      ]
+    },
+    "aboutBackground": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
-    },
-    "aboutBackground": {
-      "type": "media",
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "heroCtaText": {
-      "type": "string"
-    },
-    "heroCtaLink": {
-      "type": "string"
+      ]
     },
     "didYouKnow": {
       "type": "component",
       "component": "homepage.did-you-know",
       "repeatable": true
-    },
-    "impactTitle": {
-      "type": "string"
-    },
-    "impactImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
     },
     "impactStats": {
       "type": "component",
@@ -97,8 +69,66 @@
       "component": "homepage.agent-card",
       "repeatable": true
     },
+    "agenPerubahanBannerTitle": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "agenPerubahanBannerSubtitle": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "agenPerubahanBannerThumbnail": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "agenPerubahanBannerCtaText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "agenPerubahanBannerCtaLink": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "awardTitle": {
       "type": "string"
+    },
+    "supporterTitle": {
+      "type": "string"
+    },
+    "supporterSubtitle": {
+      "type": "string"
+    },
+    "supporterCards": {
+      "type": "component",
+      "component": "homepage.supporter-and-collabolators",
+      "repeatable": true
     },
     "awardCards": {
       "type": "component",
@@ -111,17 +141,6 @@
     "instagramCards": {
       "type": "component",
       "component": "homepage.instagram-section",
-      "repeatable": true
-    },
-    "supporterTitle": {
-      "type": "string"
-    },
-    "supporterSubtitle": {
-      "type": "string"
-    },
-    "supporterCards": {
-      "type": "component",
-      "component": "homepage.supporter-and-collabolators",
       "repeatable": true
     }
   }

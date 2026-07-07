@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_target_penerima_cards",
+  "info": {
+    "displayName": "targetPenerimaCard",
+    "icon": "handHeart"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

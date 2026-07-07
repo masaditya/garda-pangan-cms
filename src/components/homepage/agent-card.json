@@ -20,6 +20,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
     }
   }
 }

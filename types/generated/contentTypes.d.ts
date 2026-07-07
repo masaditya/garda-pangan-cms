@@ -468,10 +468,26 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     heroTitle: Schema.Attribute.String;
     historyContent1: Schema.Attribute.RichText;
     historyContent2: Schema.Attribute.RichText;
-    historyImages: Schema.Attribute.Media<'images', true> &
+    historyImage1: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
+        };
+      }>;
+    historyImage2: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    historyImage3: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
         };
       }>;
     historyTitle: Schema.Attribute.String;
@@ -483,15 +499,32 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     missionContent: Schema.Attribute.RichText;
     missionTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Misi'>;
     publishedAt: Schema.Attribute.DateTime;
+    targetDonaturCards: Schema.Attribute.Component<
+      'shared.target-donatur-card',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     targetDonaturTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Target Donatur'>;
+    targetPenerimaCards: Schema.Attribute.Component<
+      'shared.target-penerima-card',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     targetPenerimaTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Target Penerima'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     visionContent: Schema.Attribute.RichText;
-    visionHighlight: Schema.Attribute.Text;
     visionTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Visi'>;
   };
 }
@@ -933,12 +966,20 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     footerAddress: Schema.Attribute.Text;
     footerEmail: Schema.Attribute.Email;
     footerPhone: Schema.Attribute.String;
+    footerSocialLinks: Schema.Attribute.Component<
+      'shared.footer-social-links',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
-    socialLinks: Schema.Attribute.Component<'shared.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -962,6 +1003,44 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    aboutBackground: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    agenPerubahanBannerCtaLink: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    agenPerubahanBannerCtaText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    agenPerubahanBannerSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    agenPerubahanBannerThumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    agenPerubahanBannerTitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     agenPerubahanCards: Schema.Attribute.Component<'homepage.agent-card', true>;
     agenPerubahanSubtitle: Schema.Attribute.String;
     agenPerubahanTitle: Schema.Attribute.String;
@@ -978,18 +1057,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
-    heroCtaLink: Schema.Attribute.String;
-    heroCtaText: Schema.Attribute.String;
-    heroSubtitle: Schema.Attribute.String;
-    heroTitle: Schema.Attribute.String;
-    impactImage: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     impactStats: Schema.Attribute.Component<'homepage.impact-stat', true>;
-    impactTitle: Schema.Attribute.String;
     instagramCards: Schema.Attribute.Component<
       'homepage.instagram-section',
       true

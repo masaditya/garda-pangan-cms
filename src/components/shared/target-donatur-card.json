@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_target_donatur_cards",
+  "info": {
+    "displayName": "targetDonaturCard",
+    "icon": "restaurant"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
