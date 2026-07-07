@@ -642,44 +642,6 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAwardAward extends Struct.CollectionTypeSchema {
-  collectionName: 'awards';
-  info: {
-    description: 'Awards and Recognition';
-    displayName: 'Award';
-    pluralName: 'awards';
-    singularName: 'award';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    badgeImage: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::award.award'>;
-    organizerName: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    year: Schema.Attribute.String;
-  };
-}
-
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -900,42 +862,6 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFactFact extends Struct.CollectionTypeSchema {
-  collectionName: 'facts';
-  info: {
-    description: 'Tahukah Kamu section facts';
-    displayName: 'Fact';
-    pluralName: 'facts';
-    singularName: 'fact';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    content: Schema.Attribute.Text;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    icon: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::fact.fact'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1075,47 +1001,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     >;
     supporterSubtitle: Schema.Attribute.String;
     supporterTitle: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiInstagramFeedInstagramFeed
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'instagram_feeds';
-  info: {
-    description: 'Our Instagram section manual feed';
-    displayName: 'Instagram Feed';
-    pluralName: 'instagram-feeds';
-    singularName: 'instagram-feed';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::instagram-feed.instagram-feed'
-    >;
-    postLink: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1355,50 +1240,6 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
-  collectionName: 'partners';
-  info: {
-    description: 'Featured In and Supporters';
-    displayName: 'Partner';
-    pluralName: 'partners';
-    singularName: 'partner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    category: Schema.Attribute.Enumeration<
-      ['Featured', 'Supporter', 'Collaborator']
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::partner.partner'
-    >;
-    logo: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    websiteUrl: Schema.Attribute.String;
-  };
-}
-
 export interface ApiPenerimaPagePenerimaPage extends Struct.SingleTypeSchema {
   collectionName: 'penerima-pages';
   info: {
@@ -1491,47 +1332,6 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
         };
       }>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiTargetAudienceTargetAudience
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'target_audiences';
-  info: {
-    description: 'Target Donatur dan Penerima untuk About Page';
-    displayName: 'Target Audience';
-    pluralName: 'target-audiences';
-    singularName: 'target-audience';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    category: Schema.Attribute.Enumeration<['Donatur', 'Penerima']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    icon: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::target-audience.target-audience'
-    >;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2093,25 +1893,20 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
-      'api::award.award': ApiAwardAward;
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::dukung-kami-page.dukung-kami-page': ApiDukungKamiPageDukungKamiPage;
       'api::event-page.event-page': ApiEventPageEventPage;
       'api::event.event': ApiEventEvent;
-      'api::fact.fact': ApiFactFact;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
-      'api::instagram-feed.instagram-feed': ApiInstagramFeedInstagramFeed;
       'api::knowledge-page.knowledge-page': ApiKnowledgePageKnowledgePage;
       'api::merchandise-category.merchandise-category': ApiMerchandiseCategoryMerchandiseCategory;
       'api::merchandise-page.merchandise-page': ApiMerchandisePageMerchandisePage;
       'api::merchandise.merchandise': ApiMerchandiseMerchandise;
       'api::mitra.mitra': ApiMitraMitra;
-      'api::partner.partner': ApiPartnerPartner;
       'api::penerima-page.penerima-page': ApiPenerimaPagePenerimaPage;
       'api::program.program': ApiProgramProgram;
-      'api::target-audience.target-audience': ApiTargetAudienceTargetAudience;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
