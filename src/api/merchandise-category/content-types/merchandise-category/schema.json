@@ -4,7 +4,7 @@
   "info": {
     "singularName": "merchandise-category",
     "pluralName": "merchandise-categories",
-    "displayName": "Merchandise Category",
+    "displayName": "08. Merchandise Category",
     "description": "Categories for filtering Merchandise (Kaos, Pupuk, dll)"
   },
   "options": {

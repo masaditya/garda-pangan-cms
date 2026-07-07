@@ -434,7 +434,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: 'Konten halaman Tentang Kami sesuai desain About page';
-    displayName: 'About';
+    displayName: '02. About';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -533,7 +533,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
     description: 'Artikel Knowledge & Insights dengan isi utama dari Rich Text Editor';
-    displayName: 'Article';
+    displayName: '03. Article';
     pluralName: 'articles';
     singularName: 'article';
   };
@@ -597,7 +597,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Penulis artikel Knowledge & Insights';
-    displayName: 'Author';
+    displayName: '06. Author';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -646,7 +646,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Kategori Knowledge & Insights; thumbnail untuk carousel bisa lebih dari satu gambar';
-    displayName: 'Category';
+    displayName: '07. Category';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -694,7 +694,7 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   collectionName: 'contact-pages';
   info: {
     description: 'Konten halaman Hubungi / Contact Us dengan kartu ajakan bertindak.';
-    displayName: 'Contact Page';
+    displayName: '09. Contact Page';
     pluralName: 'contact-pages';
     singularName: 'contact-page';
   };
@@ -739,7 +739,7 @@ export interface ApiDukungKamiPageDukungKamiPage
   collectionName: 'dukung_kami_pages';
   info: {
     description: 'Halaman donasi: hero, copy, dan snippet embed pembayaran (mis. Midtrans).';
-    displayName: 'Dukung Kami Page';
+    displayName: '08. Dukung Kami Page';
     pluralName: 'dukung-kami-pages';
     singularName: 'dukung-kami-page';
   };
@@ -784,7 +784,7 @@ export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
   collectionName: 'event-pages';
   info: {
     description: 'Hero section for the Our Events page';
-    displayName: 'Event Page';
+    displayName: '03. Event Page';
     pluralName: 'event-pages';
     singularName: 'event-page';
   };
@@ -824,7 +824,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
     description: 'Individual events';
-    displayName: 'Event';
+    displayName: '02. Event';
     pluralName: 'events';
     singularName: 'event';
   };
@@ -866,7 +866,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
     description: 'Define global settings';
-    displayName: 'Global';
+    displayName: '10. Global';
     pluralName: 'globals';
     singularName: 'global';
   };
@@ -916,7 +916,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
     description: 'Comprehensive homepage content matching design';
-    displayName: 'Homepage';
+    displayName: '01. Homepage';
     pluralName: 'homepages';
     singularName: 'homepage';
   };
@@ -1011,7 +1011,7 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
   collectionName: 'knowledge-pages';
   info: {
     description: 'Hero, pencarian, dan label filter untuk Knowledge & Insights';
-    displayName: 'Knowledge Page';
+    displayName: '04. Knowledge Page';
     pluralName: 'knowledge-pages';
     singularName: 'knowledge-page';
   };
@@ -1068,7 +1068,7 @@ export interface ApiMerchandiseCategoryMerchandiseCategory
   collectionName: 'merchandise_categories';
   info: {
     description: 'Categories for filtering Merchandise (Kaos, Pupuk, dll)';
-    displayName: 'Merchandise Category';
+    displayName: '08. Merchandise Category';
     pluralName: 'merchandise-categories';
     singularName: 'merchandise-category';
   };
@@ -1111,7 +1111,7 @@ export interface ApiMerchandisePageMerchandisePage
   collectionName: 'merchandise-pages';
   info: {
     description: 'Header text and image for the Merchandise page';
-    displayName: 'Merchandise Page';
+    displayName: '07. Merchandise Page';
     pluralName: 'merchandise-pages';
     singularName: 'merchandise-page';
   };
@@ -1151,7 +1151,7 @@ export interface ApiMerchandiseMerchandise extends Struct.CollectionTypeSchema {
   collectionName: 'merchandises';
   info: {
     description: 'The merchandise products available';
-    displayName: 'Merchandise';
+    displayName: '05. Merchandise';
     pluralName: 'merchandises';
     singularName: 'merchandise';
   };
@@ -1202,7 +1202,7 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
   collectionName: 'mitras';
   info: {
     description: 'Mitra (Partnership) Page Layout';
-    displayName: 'Mitra';
+    displayName: '06. Mitra';
     pluralName: 'mitras';
     singularName: 'mitra';
   };
@@ -1244,7 +1244,7 @@ export interface ApiPenerimaPagePenerimaPage extends Struct.SingleTypeSchema {
   collectionName: 'penerima-pages';
   info: {
     description: 'Konten halaman Penerima Bantuan: hero dua baris, penjelasan, video testimoni YouTube';
-    displayName: 'Penerima Page';
+    displayName: '05. Penerima Page';
     pluralName: 'penerima-pages';
     singularName: 'penerima-page';
   };
@@ -1300,7 +1300,7 @@ export interface ApiProgramProgram extends Struct.CollectionTypeSchema {
   collectionName: 'programs';
   info: {
     description: 'Ayo Jadi Agen Perubahan options';
-    displayName: 'Program';
+    displayName: '01. Program';
     pluralName: 'programs';
     singularName: 'program';
   };
@@ -1342,7 +1342,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
     description: 'Quotes and testimonials from beneficiaries or partners';
-    displayName: 'Testimonial';
+    displayName: '04. Testimonial';
     pluralName: 'testimonials';
     singularName: 'testimonial';
   };
