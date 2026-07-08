@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = () => ({
-  'populate-deep': {
+  'strapi-v5-plugin-populate-deep': {
     config: {
       defaultDepth: 10,
     }
