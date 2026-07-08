@@ -1,3 +1,9 @@
 'use strict';
 
-module.exports = () => ({});
+module.exports = () => ({
+  'populate-deep': {
+    config: {
+      defaultDepth: 10,
+    }
+  }
+});
