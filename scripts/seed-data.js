@@ -15,132 +15,151 @@ const sampleParagraphExtra = {
 const singleTypes = {
   'api::homepage.homepage': {
     id: {
-      heroTitle: 'ONE STOP FOOD LOSS & WASTE SOLUTION',
-      heroSubtitle:
-        'Garda Pangan adalah food rescue organization yang berfokus pada isu food loss and waste.',
-      heroCtaText: 'Pelajari Selengkapnya',
-      heroCtaLink: '/about',
+      agenPerubahanTitle: "Ayo Jadi agen perubahan",
+      agenPerubahanSubtitle: "Melalui Garda Pangan kamu bisa berpartisipasi dalam menuntaskan kerawanan pangan di Indonesia.",
+      awardTitle: "Awards & Recognition",
+      instagramTitle: "Our Instagram",
+      supporterTitle: "Supporter & Collabolators",
+      supporterSubtitle: "Since 2021, we have partnered with these companies to create  impact for the future. Will your logo be next here?",
+      agenPerubahanBannerTitle: null,
+      agenPerubahanBannerSubtitle: null,
+      agenPerubahanBannerCtaText: null,
+      agenPerubahanBannerCtaLink: null,
+      heroBackground: null,
+      aboutBackground: null,
+      agenPerubahanBannerThumbnail: null,
       didYouKnow: [
-        { content: 'Tahukah kamu bahwa 1/3 makanan di dunia terbuang percuma?' },
-        { content: 'Indonesia adalah pembuang makanan terbesar kedua di dunia.' },
-        { content: 'Food waste menyumbang 8-10% emisi gas rumah kaca global.' },
-        { content: 'Setiap tahunnya, sekitar 1.3 miliar ton makanan terbuang secara global.' },
-        { content: 'Membuang makanan berarti juga membuang sumber daya seperti air, energi, dan tenaga kerja.' },
-        { content: 'Menyelamatkan makanan berlebih dapat membantu mengentaskan kelaparan di masyarakat.' },
+        { content: "“Kalau sepertiga makanan yang diproduksi di seluruh dunia terbuang sia-sia? Kerugian ekonomi yang ditimbulkan juga luar biasa besar! ”" },
+        { content: "“Kalau sepertiga makanan yang diproduksi di seluruh dunia terbuang sia-sia? Kerugian ekonomi yang ditimbulkan juga luar biasa besar! ”" }
       ],
-      impactTitle: 'Dampak Kami',
       impactStats: [
-        { label: 'Porsi Makanan Terselamatkan', value: '608.311+' },
-        { label: 'Potensi Gas CO2 Berkurang', value: '788.500 kg' },
-        { label: 'Potensi Kerugian Ekonomi Terselamatkan', value: '14.3 Miliar' },
-        { label: 'Sisa Makanan Terolah', value: '272 Ton' },
+        { label: "PORTIONS OF FOOD RESCUED", value: "1234" },
+        { label: "TOONS OF FOOD SCRAP PROCESSED INTO ANIMAL FEEDS", value: "265" },
+        { label: "TONS OF POTENTIAL FOOD LOSES AND WASTE RESCUED", value: "123" },
+        { label: " KG CO2-ek greenhouse gas emission reduced", value: "456" }
       ],
-      featuredBy: { title: 'Supporters & Collaborators', logos: [] },
-      agenPerubahanTitle: 'Menjadi Agen Perubahan',
-      agenPerubahanSubtitle:
-        'Mari berkontribusi nyata dalam mengatasi masalah food waste di Indonesia',
+      featuredBy: {
+        title: "Supported By",
+        logos: null
+      },
       agenPerubahanCards: [
-        {
-          title: 'Donasi Makanan',
-          description:
-            'Salurkan kelebihan makanan layak konsumsi Anda untuk mereka yang membutuhkan melalui sistem food rescue kami.',
-        },
-        {
-          title: 'Menjadi Relawan',
-          description:
-            'Bergabunglah sebagai food heroes dan bantu kami mendistribusikan makanan ke titik-titik penerima.',
-        },
-        {
-          title: 'Donasi Dana',
-          description:
-            'Dukung operasional kami untuk menjangkau lebih banyak orang dan menyelamatkan lebih banyak makanan.',
-        },
+        { title: "Donasi Makanan", description: "Methodical Data Collection and Meaningful Organization", ctaText: "MULAI", ctaLink: "/support", image: null },
+        { title: "Donasi Tunai", description: "Methodical Data Collection and Meaningful Organization\n\n", ctaText: "Mulai", ctaLink: "/support", image: null },
+        { title: "Usul Penerima", description: "Methodical Data Collection and Meaningful Organization\n\n", ctaText: "MULAI", ctaLink: "/support", image: null },
+        { title: "Jadi Relawan", description: "Methodical Data Collection and Meaningful Organization", ctaText: "Mulai", ctaLink: "/support", image: null }
       ],
-      awardTitle: 'Awards & Recognition',
-      awardCards: [
-        { title: 'Tokoh Penggerak Inovasi Sosial', year: '2026' },
-        { title: 'Pejuang Pangan Berkelanjutan', year: '2024' },
-        { title: 'Anugerah Komunitas Penggerak Terdepan', year: '2024' },
-      ],
-      instagramTitle: 'Follow Our Journey',
-      instagramCards: [
-        {
-          title: 'Update Kegiatan',
-          subtitle: 'Dapatkan update terbaru kegiatan kami di Instagram',
-          instagramHandle: '@gardapangan',
-        },
-      ],
-      supporterTitle: 'Our Supporters & Collaborators',
-      supporterSubtitle: 'Terima kasih kepada mitra yang telah mendukung gerakan kami',
       supporterCards: [
-        { title: 'Mitra Industri' },
-        { title: 'Mitra Komunitas' },
-        { title: 'Mitra Pemerintah' },
+        { title: "Badan Pangan Nasional", image: null },
+        { title: "Badan Pangan Nasional 2", image: null },
+        { title: "Badan Pangan Nasional 3", image: null },
+        { title: "Badan Pangan Nasional 4", image: null }
       ],
+      awardCards: [
+        { title: "Startup with Best Social Impact", year: "2017", images: null, awardByLogo: null },
+        { title: "Startup with Best Economic Impact", year: "2019", images: null, awardByLogo: null },
+        { title: "Startup with Best Education Impact", year: "2018", images: null, awardByLogo: null }
+      ],
+      instagramCards: [
+        { instagramLink: "https://www.instagram.com/p/DMjUS2jzpMK/", image: null },
+        { instagramLink: "https://www.instagram.com/p/DKLZv4CB8v4/", image: null },
+        { instagramLink: "https://www.instagram.com/p/DahN5e4zwJx/", image: null },
+        { instagramLink: "https://www.instagram.com/p/DaW2eBVT4lc/", image: null }
+      ]
     },
     en: {
-      heroTitle: 'ONE STOP FOOD LOSS & WASTE SOLUTION',
-      heroSubtitle:
-        'Garda Pangan is a food rescue organization focused on food loss and waste.',
-      heroCtaText: 'Learn More',
-      heroCtaLink: '/about',
+      agenPerubahanTitle: "Ayo Jadi agen perubahan",
+      agenPerubahanSubtitle: "Melalui Garda Pangan kamu bisa berpartisipasi dalam menuntaskan kerawanan pangan di Indonesia.",
+      awardTitle: "Awards & Recognition",
+      instagramTitle: "Our Instagram",
+      supporterTitle: "Supporter & Collabolators",
+      supporterSubtitle: "Since 2021, we have partnered with these companies to create  impact for the future. Will your logo be next here?",
+      agenPerubahanBannerTitle: "Ayo Jadi agen perubahan",
+      agenPerubahanBannerSubtitle: "Melalui Garda Pangan kamu bisa berpartisipasi dalam menuntaskan kerawanan pangan di Indonesia.",
+      agenPerubahanBannerCtaText: "TELL ME MORE",
+      agenPerubahanBannerCtaLink: "/relawan",
+      heroBackground: null,
+      aboutBackground: null,
+      agenPerubahanBannerThumbnail: null,
       didYouKnow: [
-        { content: 'Did you know that one-third of food in the world is wasted?' },
-        { content: 'Indonesia is the second-largest food waster in the world.' },
-        { content: 'Food waste contributes 8–10% of global greenhouse gas emissions.' },
-        { content: 'Every year, around 1.3 billion tons of food is wasted globally.' },
-        { content: 'Wasting food also means wasting resources like water, energy, and labor.' },
-        { content: 'Rescuing surplus food can help alleviate hunger in our communities.' },
+        { content: "“Kalau sepertiga makanan yang diproduksi di seluruh dunia terbuang sia-sia? Kerugian ekonomi yang ditimbulkan juga luar biasa besar! ”" },
+        { content: "“Kalau sepertiga makanan yang diproduksi di seluruh dunia terbuang sia-sia? Kerugian ekonomi yang ditimbulkan juga luar biasa besar! ”" }
       ],
-      impactTitle: 'Our Impact',
       impactStats: [
-        { label: 'Meals Rescued', value: '608,311+' },
-        { label: 'Potential CO2 Reduced', value: '788,500 kg' },
-        { label: 'Potential Economic Loss Prevented', value: '14.3 Billion' },
-        { label: 'Surplus Food Processed', value: '272 Tons' },
+        { label: "PORTIONS OF FOOD RESCUED", value: "1234" },
+        { label: "TOONS OF FOOD SCRAP PROCESSED INTO ANIMAL FEEDS", value: "265" },
+        { label: "TONS OF POTENTIAL FOOD LOSES AND WASTE RESCUED", value: "123" },
+        { label: " KG CO2-ek greenhouse gas emission reduced", value: "456" }
       ],
-      featuredBy: { title: 'Supporters & Collaborators', logos: [] },
-      agenPerubahanTitle: 'Become a Change Agent',
-      agenPerubahanSubtitle:
-        'Make a real contribution to tackling food waste in Indonesia',
+      featuredBy: {
+        title: "Supported By",
+        logos: null
+      },
       agenPerubahanCards: [
-        {
-          title: 'Food Donation',
-          description:
-            'Donate your surplus edible food to those in need through our food rescue system.',
-        },
-        {
-          title: 'Volunteer',
-          description:
-            'Join as food heroes and help us distribute meals to beneficiary communities.',
-        },
-        {
-          title: 'Financial Donation',
-          description:
-            'Support our operations to reach more people and rescue more food.',
-        },
+        { title: "Donasi Makanan", description: "Methodical Data Collection and Meaningful Organization", ctaText: "MULAI", ctaLink: "/support", image: null },
+        { title: "Donasi Tunai", description: "Methodical Data Collection and Meaningful Organization\n\n", ctaText: "Mulai", ctaLink: "/support", image: null },
+        { title: "Usul Penerima", description: "Methodical Data Collection and Meaningful Organization\n\n", ctaText: "MULAI", ctaLink: "/support", image: null },
+        { title: "Jadi Relawan", description: "Methodical Data Collection and Meaningful Organization", ctaText: "Mulai", ctaLink: "/support", image: null }
       ],
-      awardTitle: 'Awards & Recognition',
-      awardCards: [
-        { title: 'Social Innovation Catalyst', year: '2026' },
-        { title: 'Sustainable Food Champion', year: '2024' },
-        { title: 'Leading Community Movement Award', year: '2024' },
-      ],
-      instagramTitle: 'Follow Our Journey',
-      instagramCards: [
-        {
-          title: 'Activity Updates',
-          subtitle: 'Get the latest updates on our activities on Instagram',
-          instagramHandle: '@gardapangan',
-        },
-      ],
-      supporterTitle: 'Our Supporters & Collaborators',
-      supporterSubtitle: 'Thank you to partners who support our movement',
       supporterCards: [
-        { title: 'Industry Partners' },
-        { title: 'Community Partners' },
-        { title: 'Government Partners' },
+        { title: "Badan Pangan Nasional", image: null },
+        { title: "Badan Pangan Nasional 2", image: null },
+        { title: "Badan Pangan Nasional 3", image: null },
+        { title: "Badan Pangan Nasional 4", image: null }
       ],
+      awardCards: [
+        { title: "Startup with Best Social Impact", year: "2017", images: null, awardByLogo: null },
+        { title: "Startup with Best Economic Impact", year: "2019", images: null, awardByLogo: null },
+        { title: "Startup with Best Education Impact", year: "2018", images: null, awardByLogo: null }
+      ],
+      instagramCards: [
+        { instagramLink: "https://www.instagram.com/p/DMjUS2jzpMK/", image: null },
+        { instagramLink: "https://www.instagram.com/p/DKLZv4CB8v4/", image: null },
+        { instagramLink: "https://www.instagram.com/p/DahN5e4zwJx/", image: null },
+        { instagramLink: "https://www.instagram.com/p/DaW2eBVT4lc/", image: null }
+      ]
+    },
+  },
+
+  'api::global.global': {
+    id: {
+      siteName: 'Garda Pangan',
+      siteDescription: 'Garda Pangan merupakan sebuah food bank yang bertujuan menjadi pusat koordinasi makanan surplus dan berpotensi terbuang, untuk disalurkan kepada masyarakat pra-sejahtera.',
+      footerAddress: 'Jl Semolowaru Indah I J4 Surabaya 60119',
+      footerEmail: 'gardapanganid@gmail.com',
+      footerPhone: '(+62) 895337847614',
+      favicon: null,
+      footerSocialLinks: {
+        youtube: 'https://www.youtube.com/@gardapangan7153',
+        tiktok: 'https://www.tiktok.com/@gardapangan_',
+        linkedin: 'https://www.linkedin.com/company/gardapangan/',
+        instagram: 'https://www.instagram.com/gardapangan',
+        facebook: 'https://www.facebook.com/gardapanganid',
+      },
+      defaultSeo: {
+        metaTitle: 'Garda Pangan',
+        metaDescription: 'Garda Pangan merupakan sebuah food bank yang bertujuan menjadi pusat koordinasi makanan surplus dan berpotensi terbuang, untuk disalurkan kepada masyarakat pra-sejahtera.',
+        shareImage: null,
+      },
+    },
+    en: {
+      siteName: 'Garda Pangan',
+      siteDescription: 'Garda Pangan is a food bank that aims to become a central coordination point for surplus and potentially wasted food, to be distributed to underprivileged communities.',
+      footerAddress: 'Jl Semolowaru Indah I J4 Surabaya 60119',
+      footerEmail: 'gardapanganid@gmail.com',
+      footerPhone: '(+62) 895337847614',
+      favicon: null,
+      footerSocialLinks: {
+        youtube: 'https://www.youtube.com/@gardapangan7153',
+        tiktok: 'https://www.tiktok.com/@gardapangan_',
+        linkedin: 'https://www.linkedin.com/company/gardapangan/',
+        instagram: 'https://www.instagram.com/gardapangan',
+        facebook: 'https://www.facebook.com/gardapanganid',
+      },
+      defaultSeo: {
+        metaTitle: 'Garda Pangan',
+        metaDescription: 'Garda Pangan is a food bank that aims to become a central coordination point for surplus and potentially wasted food, to be distributed to underprivileged communities.',
+        shareImage: null,
+      },
     },
   },
 
