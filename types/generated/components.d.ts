@@ -41,7 +41,6 @@ export interface HomepageAwardsSection extends Struct.ComponentSchema {
     awardByLogo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    images: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     year: Schema.Attribute.String;
   };

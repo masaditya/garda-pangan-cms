@@ -776,8 +776,14 @@ export interface ApiDukungKamiPageDukungKamiPage
       'oneToMany',
       'api::dukung-kami-page.dukung-kami-page'
     >;
-    paymentEmbedCode: Schema.Attribute.Text;
-    paymentEmbedNote: Schema.Attribute.Text;
+    paymentQris: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
