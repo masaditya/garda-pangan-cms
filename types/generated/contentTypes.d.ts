@@ -771,8 +771,14 @@ export interface ApiDukungKamiPageDukungKamiPage
       'oneToMany',
       'api::dukung-kami-page.dukung-kami-page'
     >;
-    paymentEmbedCode: Schema.Attribute.Text;
-    paymentEmbedNote: Schema.Attribute.Text;
+    paymentQris: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -994,6 +1000,21 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::homepage.homepage'
     >;
+    partnerLogos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    partnerTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     supporterCards: Schema.Attribute.Component<
       'homepage.supporter-and-collabolators',

@@ -26,28 +26,35 @@
     },
     "heroBackground": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      ]
     },
     "heroIntro": {
       "type": "text"
     },
-    "paymentEmbedCode": {
-      "type": "text",
-      "description": "Script atau HTML embed dari Midtrans / gateway donasi (paste dari dashboard)."
-    },
-    "paymentEmbedNote": {
-      "type": "text",
-      "description": "Teks pendek di bawah form (keamanan pembayaran, syarat, dll.)"
+    "paymentQris": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

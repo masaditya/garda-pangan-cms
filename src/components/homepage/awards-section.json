@@ -9,14 +9,6 @@
     "title": {
       "type": "string"
     },
-    "images": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "year": {
       "type": "string"
     },
