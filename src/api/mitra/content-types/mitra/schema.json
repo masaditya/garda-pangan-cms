@@ -38,7 +38,12 @@
     "heroInfoCards": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.info-card"
+      "component": "shared.info-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "flowTitle": {
       "type": "string"
@@ -49,7 +54,12 @@
     "flowSteps": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.flow-step"
+      "component": "shared.flow-step",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "partnerSectionTitle": {
       "type": "string"

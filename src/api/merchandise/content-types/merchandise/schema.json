@@ -52,7 +52,12 @@
     "storeLinks": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.store-link"
+      "component": "shared.store-link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

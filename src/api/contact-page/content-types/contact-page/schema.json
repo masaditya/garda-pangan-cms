@@ -44,7 +44,12 @@
     "actionCards": {
       "type": "component",
       "repeatable": true,
-      "component": "contact.action-card"
+      "component": "contact.action-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

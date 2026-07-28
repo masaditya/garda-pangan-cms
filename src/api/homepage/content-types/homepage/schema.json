@@ -46,17 +46,32 @@
     "didYouKnow": {
       "type": "component",
       "component": "homepage.did-you-know",
-      "repeatable": true
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "impactStats": {
       "type": "component",
       "component": "homepage.impact-stat",
-      "repeatable": true
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "featuredBy": {
       "type": "component",
       "component": "homepage.featured-by",
-      "repeatable": false
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "agenPerubahanTitle": {
       "type": "string"
@@ -67,7 +82,12 @@
     "agenPerubahanCards": {
       "type": "component",
       "component": "homepage.agent-card",
-      "repeatable": true
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "agenPerubahanBannerTitle": {
       "type": "text",
@@ -128,12 +148,22 @@
     "supporterCards": {
       "type": "component",
       "component": "homepage.supporter-and-collabolators",
-      "repeatable": true
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "awardCards": {
       "type": "component",
       "component": "homepage.awards-section",
-      "repeatable": true
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "instagramTitle": {
       "type": "string"
@@ -141,7 +171,12 @@
     "instagramCards": {
       "type": "component",
       "component": "homepage.instagram-section",
-      "repeatable": true
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
