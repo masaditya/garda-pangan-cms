@@ -707,7 +707,12 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    actionCards: Schema.Attribute.Component<'contact.action-card', true>;
+    actionCards: Schema.Attribute.Component<'contact.action-card', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -888,7 +893,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    defaultSeo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -973,35 +983,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    agenPerubahanCards: Schema.Attribute.Component<'homepage.agent-card', true>;
-    agenPerubahanSubtitle: Schema.Attribute.String;
-    agenPerubahanTitle: Schema.Attribute.String;
-    awardCards: Schema.Attribute.Component<'homepage.awards-section', true>;
-    awardTitle: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    didYouKnow: Schema.Attribute.Component<'homepage.did-you-know', true>;
-    featuredBy: Schema.Attribute.Component<'homepage.featured-by', false>;
-    heroBackground: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    impactStats: Schema.Attribute.Component<'homepage.impact-stat', true>;
-    instagramCards: Schema.Attribute.Component<
-      'homepage.instagram-section',
-      true
-    >;
-    instagramTitle: Schema.Attribute.String;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homepage.homepage'
-    >;
-    partnerLogos: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
+    agenPerubahanCards: Schema.Attribute.Component<
+      'homepage.agent-card',
       true
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1009,17 +992,67 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    partnerTitle: Schema.Attribute.String &
+    agenPerubahanSubtitle: Schema.Attribute.String;
+    agenPerubahanTitle: Schema.Attribute.String;
+    awardCards: Schema.Attribute.Component<'homepage.awards-section', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    awardTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    didYouKnow: Schema.Attribute.Component<'homepage.did-you-know', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    featuredBy: Schema.Attribute.Component<'homepage.featured-by', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroBackground: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    impactStats: Schema.Attribute.Component<'homepage.impact-stat', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    instagramCards: Schema.Attribute.Component<
+      'homepage.instagram-section',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    instagramTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     supporterCards: Schema.Attribute.Component<
       'homepage.supporter-and-collabolators',
       true
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     supporterSubtitle: Schema.Attribute.String;
     supporterTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1211,7 +1244,12 @@ export interface ApiMerchandiseMerchandise extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     releaseDate: Schema.Attribute.Date;
-    storeLinks: Schema.Attribute.Component<'shared.store-link', true>;
+    storeLinks: Schema.Attribute.Component<'shared.store-link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1240,7 +1278,12 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     flowDescription: Schema.Attribute.Text;
-    flowSteps: Schema.Attribute.Component<'shared.flow-step', true>;
+    flowSteps: Schema.Attribute.Component<'shared.flow-step', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     flowTitle: Schema.Attribute.String;
     heroBackgroundMedia: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.SetPluginOptions<{
@@ -1248,7 +1291,12 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
-    heroInfoCards: Schema.Attribute.Component<'shared.info-card', true>;
+    heroInfoCards: Schema.Attribute.Component<'shared.info-card', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroTitle: Schema.Attribute.String;
     heroVideoUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String;
