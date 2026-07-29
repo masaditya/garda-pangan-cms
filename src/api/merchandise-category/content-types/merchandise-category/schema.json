@@ -18,7 +18,12 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "merchandises": {
       "type": "relation",
@@ -27,7 +32,7 @@
       "mappedBy": "category",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       }
     }
