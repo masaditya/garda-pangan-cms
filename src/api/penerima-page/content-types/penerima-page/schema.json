@@ -18,14 +18,29 @@
   "attributes": {
     "heroTitleLine1": {
       "type": "string",
-      "default": "Penerima"
+      "default": "Penerima",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "heroTitleLine2": {
       "type": "string",
-      "default": "Bantuan"
+      "default": "Bantuan",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "heroDescription": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "heroBackground": {
       "type": "media",
@@ -42,14 +57,29 @@
       }
     },
     "testimonialsEyebrow": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "testimonialsTitle": {
       "type": "string",
-      "default": "Testimoni penerima manfaat"
+      "default": "Testimoni penerima manfaat",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "testimonialsSubtitle": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "youtubeTestimonialsUrl": {
       "type": "string",
@@ -71,7 +101,12 @@
     },
     "testimonialButtonLabel": {
       "type": "string",
-      "default": "Tonton Testimoni"
+      "default": "Tonton Testimoni",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

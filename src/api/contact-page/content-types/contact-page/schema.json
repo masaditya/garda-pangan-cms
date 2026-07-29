@@ -18,11 +18,21 @@
   "attributes": {
     "heroTitleLine1": {
       "type": "string",
-      "default": "Hubungi"
+      "default": "Hubungi",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "heroTitleLine2": {
       "type": "string",
-      "default": "Kami"
+      "default": "Kami",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "heroBackground": {
       "type": "media",
@@ -39,7 +49,12 @@
       }
     },
     "heroIntro": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "actionCards": {
       "type": "component",

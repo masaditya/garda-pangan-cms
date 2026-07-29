@@ -47,35 +47,75 @@
     },
     "searchPlaceholder": {
       "type": "string",
-      "default": "Cari Knowledge & Insights"
+      "default": "Cari Knowledge & Insights",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "categoryFilterLabel": {
       "type": "string",
-      "default": "Kategori"
+      "default": "Kategori",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "filterAllLabel": {
       "type": "string",
-      "default": "Tampilkan Semua"
+      "default": "Tampilkan Semua",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "sortNewestLabel": {
       "type": "string",
-      "default": "Terbaru"
+      "default": "Terbaru",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "searchSubmitLabel": {
       "type": "string",
-      "default": "Search"
+      "default": "Search",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "paginationPrevLabel": {
       "type": "string",
-      "default": "Previous"
+      "default": "Previous",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "paginationNextLabel": {
       "type": "string",
-      "default": "Next"
+      "default": "Next",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "emptyListMessage": {
       "type": "text",
-      "default": "Tidak ada artikel yang cocok dengan filter Anda."
+      "default": "Tidak ada artikel yang cocok dengan filter Anda.",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

@@ -37,7 +37,12 @@
     },
     "siteDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "defaultSeo": {
       "type": "component",
