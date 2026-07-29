@@ -464,10 +464,30 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
-    heroSubtitle: Schema.Attribute.Text;
-    heroTitle: Schema.Attribute.String;
-    historyContent1: Schema.Attribute.RichText;
-    historyContent2: Schema.Attribute.RichText;
+    heroSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    historyContent1: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    historyContent2: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     historyImage1: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -490,14 +510,40 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    historyTitle: Schema.Attribute.String;
+    historyTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     legalitasTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.DefaultTo<'Legalitas'>;
-    legalityContent: Schema.Attribute.RichText;
+    legalityContent: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'>;
-    missionContent: Schema.Attribute.RichText;
-    missionTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Misi'>;
+    missionContent: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    missionTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Misi'>;
     publishedAt: Schema.Attribute.DateTime;
     targetDonaturCards: Schema.Attribute.Component<
       'shared.target-donatur-card',
@@ -509,6 +555,11 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         };
       }>;
     targetDonaturTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.DefaultTo<'Target Donatur'>;
     targetPenerimaCards: Schema.Attribute.Component<
       'shared.target-penerima-card',
@@ -520,12 +571,28 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         };
       }>;
     targetPenerimaTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
       Schema.Attribute.DefaultTo<'Target Penerima'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    visionContent: Schema.Attribute.RichText;
-    visionTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Visi'>;
+    visionContent: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    visionTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Visi'>;
   };
 }
 
