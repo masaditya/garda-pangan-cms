@@ -34,88 +34,88 @@
     },
     "heroBackground": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      ]
     },
     "searchPlaceholder": {
       "type": "string",
-      "default": "Cari Knowledge & Insights",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Cari Knowledge & Insights"
     },
     "categoryFilterLabel": {
       "type": "string",
-      "default": "Kategori",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Kategori"
     },
     "filterAllLabel": {
       "type": "string",
-      "default": "Tampilkan Semua",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Tampilkan Semua"
     },
     "sortNewestLabel": {
       "type": "string",
-      "default": "Terbaru",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Terbaru"
     },
     "searchSubmitLabel": {
       "type": "string",
-      "default": "Search",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Search"
     },
     "paginationPrevLabel": {
       "type": "string",
-      "default": "Previous",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Previous"
     },
     "paginationNextLabel": {
       "type": "string",
-      "default": "Next",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Next"
     },
     "emptyListMessage": {
       "type": "text",
-      "default": "Tidak ada artikel yang cocok dengan filter Anda.",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "default": "Tidak ada artikel yang cocok dengan filter Anda."
     }
   }
 }

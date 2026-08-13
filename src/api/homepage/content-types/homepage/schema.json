@@ -43,35 +43,43 @@
         "images"
       ]
     },
-    "didYouKnow": {
-      "type": "component",
-      "component": "homepage.did-you-know",
-      "repeatable": true,
+    "didYouKnowTitle": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
+    },
+    "didYouKnow": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "homepage.did-you-know",
+      "repeatable": true
     },
     "impactStats": {
       "type": "component",
-      "component": "homepage.impact-stat",
-      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "homepage.impact-stat",
+      "repeatable": true
     },
     "featuredBy": {
       "type": "component",
-      "component": "homepage.featured-by",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "homepage.featured-by",
+      "repeatable": false
     },
     "agenPerubahanTitle": {
       "type": "string",
@@ -91,13 +99,13 @@
     },
     "agenPerubahanCards": {
       "type": "component",
-      "component": "homepage.agent-card",
-      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "homepage.agent-card",
+      "repeatable": true
     },
     "agenPerubahanBannerTitle": {
       "type": "text",
@@ -157,36 +165,36 @@
     },
     "supporterCards": {
       "type": "component",
-      "component": "homepage.supporter-and-collabolators",
-      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "homepage.supporter-and-collabolators",
+      "repeatable": true
     },
     "awardCards": {
       "type": "component",
-      "component": "homepage.awards-section",
-      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "homepage.awards-section",
+      "repeatable": true
     },
     "instagramTitle": {
       "type": "string"
     },
     "instagramCards": {
       "type": "component",
-      "component": "homepage.instagram-section",
-      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "homepage.instagram-section",
+      "repeatable": true
     },
     "partnerTitle": {
       "type": "string",
