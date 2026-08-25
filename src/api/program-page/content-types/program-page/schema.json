@@ -1,14 +1,13 @@
 {
   "kind": "singleType",
-  "collectionName": "merchandise-pages",
+  "collectionName": "program_pages",
   "info": {
-    "singularName": "merchandise-page",
-    "pluralName": "merchandise-pages",
-    "displayName": "07. Product Page",
-    "description": "Header text and image for the Merchandise page"
+    "singularName": "program-page",
+    "pluralName": "program-pages",
+    "displayName": "02. Program Page"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {
     "i18n": {
@@ -16,7 +15,7 @@
     }
   },
   "attributes": {
-    "heroTitle": {
+    "title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -24,25 +23,27 @@
         }
       }
     },
-    "heroDescription": {
-      "type": "text",
+    "description": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "heroBackground": {
+    "backgroundImage": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "multiple": false,
       "allowedTypes": [
         "images",
-        "videos"
+        "files",
+        "videos",
+        "audios"
       ]
     }
   }

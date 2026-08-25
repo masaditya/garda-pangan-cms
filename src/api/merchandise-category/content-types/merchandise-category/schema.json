@@ -4,7 +4,7 @@
   "info": {
     "singularName": "merchandise-category",
     "pluralName": "merchandise-categories",
-    "displayName": "08. Merchandise Category",
+    "displayName": "05. Products Category",
     "description": "Categories for filtering Merchandise (Kaos, Pupuk, dll)"
   },
   "options": {
@@ -18,23 +18,23 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "merchandises": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::merchandise.merchandise",
-      "mappedBy": "category",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "mappedBy": "category"
     }
   }
 }

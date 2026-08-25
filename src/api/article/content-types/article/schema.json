@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "03. Article",
+    "displayName": "04. Knowledge",
     "description": "Artikel Knowledge & Insights dengan isi utama dari Rich Text Editor"
   },
   "options": {
@@ -30,51 +30,51 @@
     },
     "cover": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "carouselImages": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
-    },
-    "carouselImages": {
-      "type": "media",
+      },
       "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      ]
     },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::author.author",
-      "inversedBy": "articles",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "inversedBy": "articles"
     },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
-      "inversedBy": "articles",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "inversedBy": "articles"
     },
     "content": {
       "type": "richtext",
@@ -83,6 +83,14 @@
     "isFeatured": {
       "type": "boolean",
       "default": false
+    },
+    "videoLink": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

@@ -434,7 +434,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   collectionName: 'abouts';
   info: {
     description: 'Konten halaman Tentang Kami sesuai desain About page';
-    displayName: '02. About';
+    displayName: '12. About Page';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -600,7 +600,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
     description: 'Artikel Knowledge & Insights dengan isi utama dari Rich Text Editor';
-    displayName: '03. Article';
+    displayName: '04. Knowledge';
     pluralName: 'articles';
     singularName: 'article';
   };
@@ -657,6 +657,12 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    videoLink: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
   };
 }
 
@@ -664,7 +670,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Penulis artikel Knowledge & Insights';
-    displayName: '06. Author';
+    displayName: '08. Author';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -713,7 +719,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Kategori Knowledge & Insights; thumbnail untuk carousel bisa lebih dari satu gambar';
-    displayName: '07. Category';
+    displayName: '03. Knowledge Category';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -826,7 +832,7 @@ export interface ApiDukungKamiPageDukungKamiPage
   collectionName: 'dukung_kami_pages';
   info: {
     description: 'Halaman donasi: hero, copy, dan snippet embed pembayaran (mis. Midtrans).';
-    displayName: '08. Dukung Kami Page';
+    displayName: '08. Donation Page';
     pluralName: 'dukung-kami-pages';
     singularName: 'dukung-kami-page';
   };
@@ -842,6 +848,18 @@ export interface ApiDukungKamiPageDukungKamiPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctaLink: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ctaText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroBackground: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1022,7 +1040,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
     description: 'Define global settings';
-    displayName: '10. Global';
+    displayName: '10. Global SEO';
     pluralName: 'globals';
     singularName: 'global';
   };
@@ -1146,13 +1164,13 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     agenPerubahanSubtitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     agenPerubahanTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     awardCards: Schema.Attribute.Component<'homepage.awards-section', true> &
@@ -1161,7 +1179,12 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    awardTitle: Schema.Attribute.String;
+    awardTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1204,7 +1227,12 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    instagramTitle: Schema.Attribute.String;
+    instagramTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1235,8 +1263,18 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    supporterSubtitle: Schema.Attribute.String;
-    supporterTitle: Schema.Attribute.String;
+    supporterSubtitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    supporterTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1263,7 +1301,7 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
     categoryFilterLabel: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Kategori'>;
@@ -1273,14 +1311,14 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
     emptyListMessage: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Tidak ada artikel yang cocok dengan filter Anda.'>;
     filterAllLabel: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Tampilkan Semua'>;
@@ -1310,14 +1348,14 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
     paginationNextLabel: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Next'>;
     paginationPrevLabel: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Previous'>;
@@ -1325,21 +1363,21 @@ export interface ApiKnowledgePageKnowledgePage extends Struct.SingleTypeSchema {
     searchPlaceholder: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Cari Knowledge & Insights'>;
     searchSubmitLabel: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Search'>;
     sortNewestLabel: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }> &
       Schema.Attribute.DefaultTo<'Terbaru'>;
@@ -1354,7 +1392,7 @@ export interface ApiMerchandiseCategoryMerchandiseCategory
   collectionName: 'merchandise_categories';
   info: {
     description: 'Categories for filtering Merchandise (Kaos, Pupuk, dll)';
-    displayName: '08. Merchandise Category';
+    displayName: '05. Products Category';
     pluralName: 'merchandise-categories';
     singularName: 'merchandise-category';
   };
@@ -1403,7 +1441,7 @@ export interface ApiMerchandisePageMerchandisePage
   collectionName: 'merchandise-pages';
   info: {
     description: 'Header text and image for the Merchandise page';
-    displayName: '07. Merchandise Page';
+    displayName: '07. Product Page';
     pluralName: 'merchandise-pages';
     singularName: 'merchandise-page';
   };
@@ -1453,7 +1491,7 @@ export interface ApiMerchandiseMerchandise extends Struct.CollectionTypeSchema {
   collectionName: 'merchandises';
   info: {
     description: 'The merchandise products available';
-    displayName: '05. Merchandise';
+    displayName: '06. Products';
     pluralName: 'merchandises';
     singularName: 'merchandise';
   };
@@ -1509,7 +1547,7 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
   collectionName: 'mitras';
   info: {
     description: 'Mitra (Partnership) Page Layout';
-    displayName: '06. Mitra';
+    displayName: '06. Mitra Page';
     pluralName: 'mitras';
     singularName: 'mitra';
   };
@@ -1525,14 +1563,24 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    flowDescription: Schema.Attribute.Text;
+    flowDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     flowSteps: Schema.Attribute.Component<'shared.flow-step', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    flowTitle: Schema.Attribute.String;
+    flowTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroBackgroundMedia: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1545,11 +1593,21 @@ export interface ApiMitraMitra extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    heroTitle: Schema.Attribute.String;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroVideoUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::mitra.mitra'>;
-    partnerSectionTitle: Schema.Attribute.String;
+    partnerSectionTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1645,6 +1703,57 @@ export interface ApiPenerimaPagePenerimaPage extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     youtubeTestimonialsUrl: Schema.Attribute.String;
+  };
+}
+
+export interface ApiProgramPageProgramPage extends Struct.SingleTypeSchema {
+  collectionName: 'program_pages';
+  info: {
+    displayName: '02. Program Page';
+    pluralName: 'program-pages';
+    singularName: 'program-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::program-page.program-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1778,7 +1887,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
     description: 'Quotes and testimonials from beneficiaries or partners';
-    displayName: '04. Testimonial';
+    displayName: '07. Testimonial';
     pluralName: 'testimonials';
     singularName: 'testimonial';
   };
@@ -2342,6 +2451,7 @@ declare module '@strapi/strapi' {
       'api::merchandise.merchandise': ApiMerchandiseMerchandise;
       'api::mitra.mitra': ApiMitraMitra;
       'api::penerima-page.penerima-page': ApiPenerimaPagePenerimaPage;
+      'api::program-page.program-page': ApiProgramPageProgramPage;
       'api::program.program': ApiProgramProgram;
       'api::relawan-page.relawan-page': ApiRelawanPageRelawanPage;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

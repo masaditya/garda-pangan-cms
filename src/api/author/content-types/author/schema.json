@@ -4,7 +4,7 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "06. Author",
+    "displayName": "08. Author",
     "description": "Penulis artikel Knowledge & Insights"
   },
   "options": {
@@ -21,18 +21,18 @@
     },
     "avatar": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      ]
     },
     "email": {
       "type": "string",
@@ -49,12 +49,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
-      "mappedBy": "author",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "mappedBy": "author"
     }
   }
 }

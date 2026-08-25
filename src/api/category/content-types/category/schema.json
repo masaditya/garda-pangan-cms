@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "07. Category",
+    "displayName": "03. Knowledge Category",
     "description": "Kategori Knowledge & Insights; thumbnail untuk carousel bisa lebih dari satu gambar"
   },
   "options": {
@@ -33,27 +33,27 @@
     },
     "thumbnails": {
       "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
-      "mappedBy": "category",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "mappedBy": "category"
     }
   }
 }

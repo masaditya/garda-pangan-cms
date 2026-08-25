@@ -4,7 +4,7 @@
   "info": {
     "singularName": "dukung-kami-page",
     "pluralName": "dukung-kami-pages",
-    "displayName": "08. Dukung Kami Page",
+    "displayName": "08. Donation Page",
     "description": "Halaman donasi: hero, copy, dan snippet embed pembayaran (mis. Midtrans)."
   },
   "options": {
@@ -18,21 +18,21 @@
   "attributes": {
     "heroTitleLine1": {
       "type": "string",
-      "default": "Dukung",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "Dukung"
     },
     "heroTitleLine2": {
       "type": "string",
-      "default": "Kami",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "Kami"
     },
     "heroBackground": {
       "type": "media",
@@ -70,6 +70,22 @@
         "videos",
         "audios"
       ]
+    },
+    "ctaText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "ctaLink": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

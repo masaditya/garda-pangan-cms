@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "02. About",
+    "displayName": "12. About Page",
     "description": "Konten halaman Tentang Kami sesuai desain About page"
   },
   "options": {
@@ -147,12 +147,12 @@
     },
     "missionTitle": {
       "type": "string",
-      "default": "Misi",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "Misi"
     },
     "missionContent": {
       "type": "richtext",
@@ -164,21 +164,21 @@
     },
     "targetDonaturTitle": {
       "type": "string",
-      "default": "Target Donatur",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "Target Donatur"
     },
     "targetPenerimaTitle": {
       "type": "string",
-      "default": "Target Penerima",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "Target Penerima"
     },
     "targetDonaturCards": {
       "type": "component",
@@ -202,12 +202,12 @@
     },
     "legalitasTitle": {
       "type": "string",
-      "default": "Legalitas",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": "Legalitas"
     },
     "legalityContent": {
       "type": "richtext",

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "global",
     "pluralName": "globals",
-    "displayName": "10. Global",
+    "displayName": "10. Global SEO",
     "description": "Define global settings"
   },
   "options": {
@@ -37,22 +37,22 @@
     },
     "siteDescription": {
       "type": "text",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "defaultSeo": {
       "type": "component",
-      "component": "shared.seo",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.seo",
+      "repeatable": false
     },
     "footerAddress": {
       "type": "text"
